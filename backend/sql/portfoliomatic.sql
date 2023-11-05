@@ -53,7 +53,19 @@ VALUES
     (NULL, 7),
     (NULL, 8),
     (NULL, 9),
-    (NULL, 10);
+    (NULL, 10),
+    (NULL, 11),
+    (NULL, 12),
+    (NULL, 13),
+    (NULL, 14),
+    (NULL, 15),
+    (NULL, 16),
+    (NULL, 17),
+    (NULL, 18),
+    (NULL, 19),
+    (NULL, 20);
+
+    
 
 CREATE TABLE portfoliomatic.country(
     id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
@@ -92,7 +104,18 @@ VALUES
 (NULL, '555-765-4321', 'linkedin.com/william', 'twitter.com/williamwilliam', 7),
 (NULL, '555-345-6789', 'linkedin.com/jennifer', 'twitter.com/jenniferjennifer', 8),
 (NULL, '555-654-3210', 'linkedin.com/daniel', 'twitter.com/danieldaniel', 9),
-(NULL, '555-678-9012', 'linkedin.com/olivia', 'twitter.com/oliviaolivia', 10);
+(NULL, '555-678-9012', 'linkedin.com/olivia', 'twitter.com/oliviaolivia', 10),
+(NULL, '555-111-2222', 'linkedin.com/andrew', 'twitter.com/andrewandrew', 11),
+(NULL, '555-333-4444', 'linkedin.com/sarah', 'twitter.com/sarahsarah', 12),
+(NULL, '555-555-6666', 'linkedin.com/ryan', 'twitter.com/ryanryan', 13),
+(NULL, '555-777-8888', 'linkedin.com/lisa', 'twitter.com/lisalisa', 14),
+(NULL, '555-999-0000', 'linkedin.com/kevin', 'twitter.com/kevinkevin', 15),
+(NULL, '555-222-3333', 'linkedin.com/megan', 'twitter.com/meganmegan', 16),
+(NULL, '555-444-5555', 'linkedin.com/chris', 'twitter.com/chrischris', 17),
+(NULL, '555-666-7777', 'linkedin.com/ashley', 'twitter.com/ashleyashley', 18),
+(NULL, '555-888-9999', 'linkedin.com/mark', 'twitter.com/markmark', 19),
+(NULL, '555-000-1111', 'linkedin.com/sophia', 'twitter.com/sophiasophia', 20);
+
 
 CREATE TABLE portfoliomatic.city(
     id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
@@ -116,7 +139,18 @@ VALUES
     (NULL,'Rio de Janeiro', 7,3),
     (NULL,'Seoul', 8,2),
     (NULL,'Moscow', 9,1),
-    (NULL,'Mexico City', 10,2);
+    (NULL,'Mexico City', 10,2),
+    (NULL, 'Berlin', 4, 10),
+(NULL, 'Barcelona', 5, 7),
+(NULL, 'Toronto', 2, 3),
+(NULL, 'Rome', 3, 6),
+(NULL, 'San Francisco', 1, 9),
+(NULL, 'Dubai', 6, 1),
+(NULL, 'Singapore', 7, 5),
+(NULL, 'Sydney', 9, 4),
+(NULL, 'Amsterdam', 10, 8),
+(NULL, 'San Diego', 8, 2);
+
 
 CREATE TABLE portfoliomatic.summary(
     id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
@@ -226,7 +260,15 @@ INSERT INTO portfoliomatic.education
 VALUES
     (NULL, 'simplon university', '06-07-22', '01-01-2024','Diploma in Hospitality Management',1, 3),
     (NULL, 'Harvard University', '06-07-22', '01-01-2024','Diploma in Information Technology',2, 5),
-    (NULL, 'Stanford University', '06-07-22', '01-01-2024','Diploma in Business Administration',3, 9);
+    (NULL, 'Stanford University', '06-07-22', '01-01-2024','Diploma in Business Administration',3, 9),
+    (NULL, 'Oxford University', '06-07-22', '01-01-2024', 'Diploma in English Literature', 4, 7),
+(NULL, 'MIT (Massachusetts Institute of Technology)', '06-07-22', '01-01-2024', 'Diploma in Computer Science', 5, 2),
+(NULL, 'Yale University', '06-07-22', '01-01-2024', 'Diploma in Economics', 6, 8),
+(NULL, 'Cambridge University', '06-07-22', '01-01-2024', 'Diploma in Physics', 7, 4),
+(NULL, 'Princeton University', '06-07-22', '01-01-2024', 'Diploma in Mathematics', 8, 6),
+(NULL, 'Columbia University', '06-07-22', '01-01-2024', 'Diploma in History', 9, 10),
+(NULL, 'Berkeley University', '06-07-22', '01-01-2024', 'Diploma in Environmental Science', 10, 1);
+
 
 
 CREATE TABLE portfoliomatic.work(
@@ -243,4 +285,22 @@ CREATE TABLE portfoliomatic.work(
 INSERT INTO portfoliomatic.work
 VALUES
     (NULL, 'Pernod Ricard','14-01-23', '01-01-2024','Project Manager',1, 5),
-    (NULL, 'simplon limited','14-01-23', '01-01-2024','Sales Representative',2, 3);
+    (NULL, 'simplon limited','14-01-23', '01-01-2024','Sales Representative',2, 3),
+    (NULL, 'Apple Inc.', '14-01-23', '01-01-2024', 'Software Engineer', 3, 9),
+    (NULL, 'Amazon.com', '14-01-23', '01-01-2024', 'Marketing Manager', 4, 7),
+    (NULL, 'Microsoft Corporation', '14-01-23', '01-01-2024', 'Product Designer', 5, 2),
+    (NULL, 'Google LLC', '14-01-23', '01-01-2024', 'Data Scientist', 6, 8),
+    (NULL, 'Tesla, Inc.', '14-01-23', '01-01-2024', 'Electrical Engineer', 7, 4),
+    (NULL, 'Facebook, Inc.', '14-01-23', '01-01-2024', 'Content Creator', 8, 6),
+    (NULL, 'IBM', '14-01-23', '01-01-2024', 'Business Analyst', 9, 10),
+    (NULL, 'Intel Corporation', '14-01-23', '01-01-2024', 'Quality Assurance Engineer', 10, 1),
+    (NULL, 'Walmart Inc.', '14-01-23', '01-01-2024', 'Store Manager', 1, 5),
+    (NULL, 'Johnson & Johnson', '14-01-23', '01-01-2024', 'Pharmaceutical Researcher', 2, 3),
+    (NULL, 'Oracle Corporation', '14-01-23', '01-01-2024', 'Database Administrator', 3, 9),
+    (NULL, 'Netflix, Inc.', '14-01-23', '01-01-2024', 'Content Writer', 4, 7),
+    (NULL, 'Twitter, Inc.', '14-01-23', '01-01-2024', 'Social Media Manager', 5, 2),
+    (NULL, 'Uber Technologies, Inc.', '14-01-23', '01-01-2024', 'Driver Partner', 6, 8),
+    (NULL, 'General Electric', '14-01-23', '01-01-2024', 'Mechanical Engineer', 7, 4),
+    (NULL, 'Procter & Gamble', '14-01-23', '01-01-2024', 'Product Manager', 8, 6),
+    (NULL, 'Cisco Systems', '14-01-23', '01-01-2024', 'Network Engineer', 9, 10),(NULL, 'Verizon Communications', '14-01-23', '01-01-2024', 'Customer Service Representative', 10, 1);
+
