@@ -1,0 +1,18 @@
+.container-dashboard h1 , p {
+    text-align: center;
+    margin: 10px;
+}
+
+.container-info {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+.col-1 {
+    width: 40%;
+    background-color:rebeccapurple;
+}
+.col-2 {
+    width: 40%;
+    background-color: aquamarine;
+}
