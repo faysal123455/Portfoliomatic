@@ -35,7 +35,11 @@ function PublicNav() {
 
   return (
     <header>
-      <h3>Portfoliomatic</h3>
+      
+      <Link to="/" relative="path">
+        <h3>Portfoliomatic</h3>
+      </Link>
+
       <nav ref={navRef}>
         <Link to="/public" relative="path">
           <a className="">Public</a>

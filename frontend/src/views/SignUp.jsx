@@ -21,7 +21,6 @@ function SignUp() {
     const handleSubmit = (event) => {
         event.preventDefault();
         setErrors(Validation(values));
-
     }
 
     return (

@@ -13,7 +13,7 @@ CREATE TABLE portfoliomatic.user(
 );
 INSERT INTO portfoliomatic.user
 VALUES
-    (NULL, 'faysal','sarker','faisaladnan700@gmail.com','Faysal123','12345'),
+    (NULL, 'faysall','sarker','faisaladnan700@gmail.com','Faysal123','12345'),
     (NULL, 'tina','mina','tinamina77100@gmail.com','mina123','12345789'),
     (NULL, 'salina','balina','kalinaa75000@gmail.com','kalina123','578900'),
     (NULL, 'John', 'Doe', 'johndoe@example.com', 'johndoe', 'password1'),

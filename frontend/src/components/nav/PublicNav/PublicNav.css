@@ -52,6 +52,11 @@ nav a {
     text-decoration: none;
 }
 
+h3 {
+    color:rgb(254, 240, 255);
+    text-decoration: none;
+}
+
 nav a:hover {
     color: var(--secondaryColor);
 }

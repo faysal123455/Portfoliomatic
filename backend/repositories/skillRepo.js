@@ -4,7 +4,6 @@ const getSkill = async () => {
     const sql = `
     SELECT skill.*
     FROM portfoliomatic.skill;`
-
     try {
         const [results] = await
             dbConnection.execute(sql);
@@ -13,6 +12,7 @@ const getSkill = async () => {
         return error;
     }
 };
+
 const createOneSkill = async (data) => {
     const sql = `
     INSERT INTO portfoliomatic.skills

@@ -1,0 +1,28 @@
+.contact {
+    display: flex;
+    justify-content: center;
+    align-items: border-box;
+    height: 100%;
+    background: aquamarine;
+}
+
+.post {
+    width: 500px;
+    padding: 6px;
+}
+
+input,
+textarea {
+    width: 100%;
+    padding: 6px;
+    outline: none;
+    border: none;
+    margin: 6px 0px;
+    height: 10vh;
+}
+
+#btn {
+    width: 150px;
+    padding: 6px;
+    cursor: pointer;
+}
