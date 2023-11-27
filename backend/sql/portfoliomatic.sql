@@ -202,26 +202,27 @@ CREATE TABLE portfoliomatic.archivment(
 );
 INSERT INTO portfoliomatic.archivment
 VALUES
-    (NULL, 'Excellence in Leadership Award','Employee of the Month',1),
-    (NULL, 'Innovator of the Year','Customer Appreciation Award',2),
-    (NULL, 'Outstanding Customer Service Recognition','Teamwork Excellence Recognition',3),
+    (NULL, 'Excellence in Leadership Award', 'Employee of the Month', 1),
+    (NULL, 'Innovator of the Year', 'Customer Appreciation Award', 2),
+    (NULL, 'Outstanding Customer Service Recognition', 'Teamwork Excellence Recognition', 3),
     (NULL, 'Top Sales Performer', 'Highest sales numbers of the quarter', 4),
     (NULL, 'Quality Assurance Star', 'Exemplary work in ensuring product quality', 5),
-    (NULL, 'Safety Champion', 'Outstanding commitment to workplace safety', 3),
-    (NULL, 'Mentor of the Year', 'Exceptional guidance and support to colleagues', 3),
-    (NULL, 'Rising Star', 'Remarkable progress and potential in the company', 4),
-    (NULL, 'Customer Satisfaction Hero', 'Exceeding customer expectations consistently', 4),
-    (NULL, 'Innovator of the Month', 'Creative solutions that drive progress', 5),
-    (NULL, 'Employee of the Quarter', 'Consistent outstanding performance', 5),
-    (NULL, 'Team Player Award', 'Dedication to fostering team collaboration', 6),
-    (NULL, 'Customer Excellence Award', 'Delighting customers with exceptional service', 6),
-    (NULL, 'Leadership in Innovation', 'Driving innovative ideas and solutions', 7),
-    (NULL, 'Community Service Star', 'Commitment to giving back to the community', 7),
-    (NULL, 'Problem-Solver of the Year', 'Expert in overcoming challenges', 8),
-    (NULL, 'Excellence in Communication', 'Effective communication skills', 8),
-    (NULL, 'Professional Growth Award', 'Continual professional development and growth', 9),
-    (NULL, 'Sustainability Champion', 'Advocating for eco-friendly practices', 9),
-    (NULL, 'Best Team Lead', 'Exceptional leadership and guidance', 10);
+    (NULL, 'Safety Champion', 'Outstanding commitment to workplace safety', 6),
+    (NULL, 'Mentor of the Year', 'Exceptional guidance and support to colleagues', 7),
+    (NULL, 'Rising Star', 'Remarkable progress and potential in the company', 8),
+    (NULL, 'Customer Satisfaction Hero', 'Exceeding customer expectations consistently', 9),
+    (NULL, 'Innovator of the Month', 'Creative solutions that drive progress', 10),
+    (NULL, 'Employee of the Quarter', 'Consistent outstanding performance', 11),
+    (NULL, 'Team Player Award', 'Dedication to fostering team collaboration', 12),
+    (NULL, 'Customer Excellence Award', 'Delighting customers with exceptional service', 13),
+    (NULL, 'Leadership in Innovation', 'Driving innovative ideas and solutions', 14),
+    (NULL, 'Community Service Star', 'Commitment to giving back to the community', 15),
+    (NULL, 'Problem-Solver of the Year', 'Expert in overcoming challenges', 16),
+    (NULL, 'Excellence in Communication', 'Effective communication skills', 17),
+    (NULL, 'Professional Growth Award', 'Continual professional development and growth', 18),
+    (NULL, 'Sustainability Champion', 'Advocating for eco-friendly practices', 19),
+    (NULL, 'Best Team Lead', 'Exceptional leadership and guidance', 20);
+
 
 
 

@@ -35,7 +35,6 @@ function PublicNav() {
 
   return (
     <header>
-      
       <Link to="/" relative="path">
         <h3>Portfoliomatic</h3>
       </Link>

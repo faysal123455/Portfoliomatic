@@ -23,6 +23,7 @@ function LogInPage() {
   const handleSubmit = (event) => {
     event.preventDefault();
     setErrors(validation(values));
+    console.log(values);
 
   }
 
@@ -52,7 +53,7 @@ function LogInPage() {
               <a href="#">Forgot password?</a>
             </div>
             <div className="login button">
-              <input type="submit" defaultValue="Login" />
+              <input type="submit" value="submit" name="submit" />
             </div>
             <div className="signup-link">
               Not a member? <Link to="/signup">Signup now</Link>

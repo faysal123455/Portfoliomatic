@@ -35,9 +35,6 @@ const AboutPage = ()  => {
                     <img src="https://www.goskills.com/blobs/blogs/460/5aa2e571-4597-48f2-8045-37013ee9de5d_lossy.webp" />
                 </section>
             </section>
-
-
-
         </section>
         <Header/>
         <Footer/>

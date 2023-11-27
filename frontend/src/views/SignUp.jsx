@@ -47,7 +47,7 @@ function SignUp() {
                             {errors.password && <span className='text-danger'> {errors.password}</span>}
                         </div>
                         <div className="login button">
-                            <input type="submit" defaultValue="Login" />
+                            <input type="submit" value="submit" name="submit" />
                         </div>
                     </form>
                 </div>

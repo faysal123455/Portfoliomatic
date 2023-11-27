@@ -13,13 +13,13 @@ const getLanguage = async () => {
 };
 
 const createOneLanguage = async (data) => {
-    const sql =`
+    const sql = `
     INSERT INTO portfoliomatic.language
 VALUES
-    (NULL, 'Spanish','Beginner','1'),
-    (NULL, 'English','Advanced','1');`
-    
-    
+    (NULL, :name, :level, :cv_id );
+    `;
+
+
     try {
         const [results] = await dbConnection.execute(sql, data);
         return results;

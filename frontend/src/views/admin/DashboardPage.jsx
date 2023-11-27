@@ -8,16 +8,6 @@ const DashboardPage = ()  => {
             <p>create your own portfolio</p>
         </div>
 
-        <div className="container-info">
-            <div className="col-1">
-                <h3>personal</h3>
-
-                
-            </div>
-            <div className="col-2">
-                <h3>professional</h3>
-            </div>
-        </div>
     <Footer/>
     </div>
 }

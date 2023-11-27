@@ -5,4 +5,4 @@ const { sendEmail } = require("../Controllers/emailControllers");
 
 router.post("/sendEmail", sendEmail);
 
-module.exports = router;
+export default  router;

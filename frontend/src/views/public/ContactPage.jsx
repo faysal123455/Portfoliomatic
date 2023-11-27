@@ -3,15 +3,12 @@ import Footer from "../../components/footer/Footer";
 import { useState } from "react";
 import "./ContactPage.css";
 
-const baseUrl = "http://localhost:8000";
-
-
-
-export default function MyForm() {
+export default function MyContact() {
     const [email, setEmail] = useState("");
     const [subject, setSubject] = useState("");
     const [message, setMessage] = useState("");
 
+const baseUrl = "http://localhost:3000"; 
     
     const sendEmail = async () => {
         let dataSend = {
@@ -19,26 +16,22 @@ export default function MyForm() {
             subject: subject,
             message: message,
         };
-        
-        try {
-            const res = await fetch(`${baseUrl}/email/sendEmail`, {
-                method: "POST",
-                body: JSON.stringify(dataSend),
-                headers: {
-                    Accept: "application/json",
-                    "Content-Type": "application/json",
-                },
+
+        const res = await fetch(`${baseUrl}/email/sendEmail`, {
+            method: "POST",
+            body: JSON.stringify(dataSend),
+            headers: {
+                Accept: "application/json",
+                "Content-Type": "application/json",
+            },
+        })
+            // HANDLING ERRORS
+            .then((res) => {
+                console.log(res);
+                if (res.status > 199 && res.status < 300) {
+                    alert("Send Successfully !");
+                }
             });
-
-            console.log(res);
-
-            if (res.status >= 200 && res.status < 300) {
-                alert("Send Successfully !");
-            }
-        } catch (error) {
-            console.error("Error sending email:", error.message);
-            alert("Failed to send email. Please try again.");
-        }
     };
 
 

@@ -2,6 +2,8 @@ import fs from 'fs/promises';
 import express from 'express';
 import https from 'https';
 import cors from 'cors';
+import jwt from 'jsonwebtoken'
+import bcrypt from 'bcrypt'
 
 
 
@@ -13,17 +15,14 @@ import archivmentsRouter from './routes/archivment.js';
 import skillsRouter from './routes/skill.js';
 import educationsRouter from './routes/education.js';
 import worksRouter from './routes/work.js';
+import cookieParser from 'cookie-parser';
 
 const app = express();
-const router = express.Router(); // Create an instance of an Express router
+const router = express.Router();
 
-
-
-// Enable CORS
 app.use(cors());
-
-// JSON request body parser
 app.use(express.json());
+app.use(cookieParser());
 
 // Define routes
 router.use('/api/users', usersRouter);
@@ -35,7 +34,6 @@ router.use('/api/skills', skillsRouter);
 router.use('/api/educations', educationsRouter);
 router.use('/api/works', worksRouter);
 
-// Use the router
 app.use(router);
 
 const options = {
@@ -43,7 +41,7 @@ const options = {
     cert: await fs.readFile('ca/cert.pem'),
 };
 
-const PORT = 3000; // Set the port you want to use
+const PORT = 3000;
 
 const server = https.createServer(options, app);
 
