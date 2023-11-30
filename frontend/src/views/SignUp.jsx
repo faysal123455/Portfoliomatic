@@ -1,26 +1,41 @@
+import { Navigate, useNavigate } from "react-router-dom";
 import Footer from "../components/footer/Footer";
+import { createUser } from "../services/api";
 import "./SignUp.css";
 import Validation from "./SignupValidation";
 import { useState } from "react";
 
 
 function SignUp() {
-
+    const Navigate = useNavigate
     const [values, setValues] = useState({
-        name: '',
+        firstname: '',
+        lastname: '',
         email: '',
         password: ''
     })
 
     const [errors, setErrors] = useState({})
+
     const handleInput = (event) => {
         setValues(prev => ({ ...prev, [event.target.name]: [event.target.value] }))
     }
 
-
     const handleSubmit = (event) => {
         event.preventDefault();
         setErrors(Validation(values));
+
+        createUser({
+            firstname: values.firstname[0],
+            lastname: values.lastname[0],
+            email: values.email[0],
+            password: values.password[0]
+        });
+
+        Navigate('/public')
+
+        // console.log(values);
+
     }
 
     return (
@@ -31,10 +46,15 @@ function SignUp() {
                 </div>
                 <div className="card">
                     <form action="" onSubmit={handleSubmit}>
-                        <div className="email">
-                            <input type="text" placeholder="Name"
-                                name='name' onChange={handleInput} required="" />
-                            {errors.name && <span className='text-danger'> {errors.name}</span>}
+                        <div className="email">    
+                            <input type="text" placeholder="FirstName"
+                                name='firstname' onChange={handleInput} required="" />
+                            {errors.firstname && <span className='text-danger'> {errors.firstname}</span>}
+                        </div>
+                        <div className="email">    
+                            <input type="text" placeholder="LastName"
+                                name='lastname' onChange={handleInput} required="" />
+                            {errors.lastname && <span className='text-danger'> {errors.lastname}</span>}
                         </div>
                         <div className="email">
                             <input type="text" placeholder="Email or Phone"

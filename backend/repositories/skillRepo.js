@@ -15,7 +15,7 @@ const getSkill = async () => {
 
 const createOneSkill = async (data) => {
     const sql = `
-    INSERT INTO portfoliomatic.skills
+    INSERT INTO portfoliomatic.skill
     VALUES
         (NULL, 'Problem Solving','1'),
         (NULL, 'Leadership','1');`

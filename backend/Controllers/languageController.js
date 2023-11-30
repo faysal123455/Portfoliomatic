@@ -1,6 +1,5 @@
 import dbConnection from '../service/dbconnection.js';
 
-
 import { getLanguage, createOneLanguage } from "../repositories/languageRepo.js";
 
 const languages = (req, res) => {

@@ -1,4 +1,3 @@
-import Header from "../../components/header/Header";
 import Footer from "../../components/footer/Footer";
 import { useState } from "react";
 import "./ContactPage.css";
@@ -38,7 +37,7 @@ const baseUrl = "http://localhost:3000";
     return (
         <div className="container_contact">
             <section className="contact">
-                <form onSubmit={sendEmail}>
+                <form onSubmit={sendEmail} className="form-contact">
                     {/* Input fields and button */}
                     <input type="email" placeholder="Email" id="email" autoComplete="off" onChange={(e) => setEmail(e.target.value)} />
 
@@ -50,7 +49,6 @@ const baseUrl = "http://localhost:3000";
                     </button>
                 </form>
             </section>
-            <Header />
             <Footer />
         </div>
     );

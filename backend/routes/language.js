@@ -9,5 +9,4 @@ languagesRouter.post('/', createLanguage);
 languagesRouter.put("/:id", update);
 languagesRouter.delete("/:id", languageDelete);
 
-
 export default languagesRouter;

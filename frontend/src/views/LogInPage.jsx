@@ -2,40 +2,53 @@ import Footer from "../components/footer/Footer";
 import "./LogInPage.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEnvelope, faLock } from "@fortawesome/free-solid-svg-icons";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
 import './LoginValidation';
 import validation from "./LoginValidation";
-
+import { loginUser } from "../services/api";
 
 function LogInPage() {
+  const navigate = useNavigate();
   const [values, setValues] = useState({
     email: '',
     password: ''
   })
 
   const [errors, setErrors] = useState({})
+  // const navigate = useNavigate
   const handleInput = (event) => {
     setValues(prev => ({ ...prev, [event.target.name]: [event.target.value] }))
   }
 
-
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
     setErrors(validation(values));
     console.log(values);
+    
+    // navigate('/public')
 
+    const request = await loginUser({
+      email: values.email[0],
+      password: values.password[0]
+    })
+
+    if (request.status === 200) {
+      navigate('/');
+    }
+
+
+   
   }
-
 
   return (
     <div className="container-log">
       <div className="container-login">
         <div className="title">
-          <span>Sign In</span>
+          <span>LogIn</span>
         </div>
         <div className="card">
-          <form action="" onSubmit={handleSubmit} >
+          <form onSubmit={handleSubmit} >
             <div className="email">
 
               <input type="text" placeholder="Email or Phone" name='email'

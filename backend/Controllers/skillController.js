@@ -1,3 +1,5 @@
+import dbConnection from '../service/dbconnection.js';
+
 import { getSkill, createOneSkill } from "../repositories/skillRepo.js"
 
 const skills = (req, res) => {
@@ -8,6 +10,21 @@ const skills = (req, res) => {
             data: data,
         })
     })
+};
+
+const skillById = async (req, res) => {
+    try {
+        const { id } = req.params;
+        const [rows, fields] = await dbConnection.query("select * from skill where id = ?", [id]);
+        res.json({
+            data: rows
+        });
+    } catch (error) {
+        console.log(error);
+        res.json({
+            status: "error"
+        });
+    }
 };
 
 const createSkill = ( req, res) => {
@@ -21,5 +38,36 @@ const createSkill = ( req, res) => {
     })
 }
 
+const update = async (req, res) => {
+    try {
+        const { name, level, cv_id } = req.body
+        const { id } = req.params
+        const sql = "update skills set name = ?, level = ?, cv_id = ? where id = ?"
+        const [rows, fields] = await dbConnection.query(sql, [name, level, cv_id, id])
+        res.json({
+            data: rows
+        })
+    } catch (error) {
+        console.log(error);
+        res.json({
+            status: "error"
+        })
+    }
+};
 
-export { skills, createSkill }
+const skillDelete = async (req, res) => {
+    try {
+        const { id } = req.params
+        const [rows, fields] = await dbConnection.query("delete from skill where id = ?", [id])
+        res.json({
+            data: rows
+        })
+    } catch (error) {
+        console.log(error);
+        res.json({
+            status: "error"
+        })
+    }
+};
+
+export { skills, createSkill, skillById, update, skillDelete }

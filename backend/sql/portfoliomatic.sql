@@ -8,31 +8,31 @@ CREATE TABLE portfoliomatic.user(
     firstname VARCHAR(50) NOT NULL,
     lastname VARCHAR(50) NOT NULL,
     email VARCHAR(100) NOT NULL UNIQUE,
-    password VARCHAR(255) NOT NULL,
-    phone VARCHAR(50) NOT NULL
+    password VARCHAR(255) NOT NULL
 );
+
 INSERT INTO portfoliomatic.user
 VALUES
-    (NULL, 'faysall','sarker','faisaladnan700@gmail.com','Faysal123','12345'),
-    (NULL, 'tina','mina','tinamina77100@gmail.com','mina123','12345789'),
-    (NULL, 'salina','balina','kalinaa75000@gmail.com','kalina123','578900'),
-    (NULL, 'John', 'Doe', 'johndoe@example.com', 'johndoe', 'password1'),
-    (NULL, 'Alice', 'Johnson', 'alice@example.com', 'alicej', 'mypassword123'),
-    (NULL, 'Bob', 'Smith', 'bob@example.com', 'bobsmith', 'securepassword'),
-    (NULL, 'Emily', 'Wilson', 'emily@example.com', 'emilyw', 'password1234'),
-    (NULL, 'David', 'Brown', 'david@example.com', 'davidb', 'brownpassword'),
-    (NULL, 'Ella', 'Thomas', 'ella@example.com', 'ellat', 'password987'),
-    (NULL, 'Michael', 'Lee', 'michael@example.com', 'michaellee', 'michael123'),
-    (NULL, 'Sophia', 'Clark', 'sophia@example.com', 'sophiaclark', 'sophia1234'),
-    (NULL, 'James', 'White', 'james@example.com', 'jameswhite', 'passwordqwerty'),
-    (NULL, 'Lily', 'Harris', 'lily@example.com', 'lilyharris', 'lilypassword'),
-    (NULL, 'William', 'Martin', 'william@example.com', 'william', 'password5678'),
-    (NULL, 'Olivia', 'Anderson', 'olivia@example.com', 'olivia', 'password456'),
-    (NULL, 'Daniel', 'Thompson', 'daniel@example.com', 'daniel123', 'password321'),
-    (NULL, 'Ava', 'Jackson', 'ava@example.com', 'avaj', 'avapassword'),
-    (NULL, 'Alexander', 'Wilson', 'alex@example.com', 'alexwilson', 'alex12345'),
-    (NULL, 'Mia', 'Miller', 'mia@example.com', 'miamiller', 'miller123'),
-    (NULL, 'Ethan', 'Anderson', 'ethan@example.com', 'ethan123', 'password9876');
+    (NULL, 'faysall','sarker','faisaladnan700@gmail.com','Faysal1'),
+    (NULL, 'tina','mina','tinamina77100@gmail.com','mina1'),
+    (NULL, 'salina','balina','kalinaa75000@gmail.com','kalina1'),
+    (NULL, 'John', 'Doe', 'johndoe@example.com', 'johndoe'),
+    (NULL, 'Alice', 'Johnson', 'alice@example.com', 'alicej'),
+    (NULL, 'Bob', 'Smith', 'bob@example.com', 'bobsmith'),
+    (NULL, 'Emily', 'Wilson', 'emily@example.com', 'emilyw'),
+    (NULL, 'David', 'Brown', 'david@example.com', 'davidb'),
+    (NULL, 'Ella', 'Thomas', 'ella@example.com', 'ellat'),
+    (NULL, 'Michael', 'Lee', 'michael@example.com', 'michaellee'),
+    (NULL, 'Sophia', 'Clark', 'sophia@example.com', 'sophiaclark'),
+    (NULL, 'James', 'White', 'james@example.com', 'jameswhite'),
+    (NULL, 'Lily', 'Harris', 'lily@example.com', 'lilyharris'),
+    (NULL, 'William', 'Martin', 'william@example.com', 'william'),
+    (NULL, 'Olivia', 'Anderson', 'olivia@example.com', 'olivia'),
+    (NULL, 'Daniel', 'Thompson', 'daniel@example.com', 'daniel123'),
+    (NULL, 'Ava', 'Jackson', 'ava@example.com', 'avaj'),
+    (NULL, 'Alexander', 'Wilson', 'alex@example.com', 'alexwilson'),
+    (NULL, 'Mia', 'Miller', 'mia@example.com', 'miamiller'),
+    (NULL, 'Ethan', 'Anderson', 'ethan@example.com', 'ethan123');
 
 
 
@@ -95,26 +95,26 @@ CREATE TABLE portfoliomatic.contact(
 );
 INSERT INTO portfoliomatic.contact
 VALUES
-(NULL, '555-123-4567', 'linkedin.com/smith', 'twitter.com/janedoe', 1),
-(NULL, '555-987-6543', 'linkedin.com/johndoe', 'twitter.com/susanjane', 2),
-(NULL, '555-789-1234', 'linkedin.com/michael', 'twitter.com/mikemike', 3),
-(NULL, '555-234-5678', 'linkedin.com/laurasmith', 'twitter.com/lauralaura', 4),
-(NULL, '555-876-5432', 'linkedin.com/robert', 'twitter.com/robertrobert', 5),
-(NULL, '555-456-7890', 'linkedin.com/emily', 'twitter.com/emilyemily', 6),
-(NULL, '555-765-4321', 'linkedin.com/william', 'twitter.com/williamwilliam', 7),
-(NULL, '555-345-6789', 'linkedin.com/jennifer', 'twitter.com/jenniferjennifer', 8),
-(NULL, '555-654-3210', 'linkedin.com/daniel', 'twitter.com/danieldaniel', 9),
-(NULL, '555-678-9012', 'linkedin.com/olivia', 'twitter.com/oliviaolivia', 10),
-(NULL, '555-111-2222', 'linkedin.com/andrew', 'twitter.com/andrewandrew', 11),
-(NULL, '555-333-4444', 'linkedin.com/sarah', 'twitter.com/sarahsarah', 12),
-(NULL, '555-555-6666', 'linkedin.com/ryan', 'twitter.com/ryanryan', 13),
-(NULL, '555-777-8888', 'linkedin.com/lisa', 'twitter.com/lisalisa', 14),
-(NULL, '555-999-0000', 'linkedin.com/kevin', 'twitter.com/kevinkevin', 15),
-(NULL, '555-222-3333', 'linkedin.com/megan', 'twitter.com/meganmegan', 16),
-(NULL, '555-444-5555', 'linkedin.com/chris', 'twitter.com/chrischris', 17),
-(NULL, '555-666-7777', 'linkedin.com/ashley', 'twitter.com/ashleyashley', 18),
-(NULL, '555-888-9999', 'linkedin.com/mark', 'twitter.com/markmark', 19),
-(NULL, '555-000-1111', 'linkedin.com/sophia', 'twitter.com/sophiasophia', 20);
+    (NULL, '555-123-4567', 'linkedin.com/smith', 'twitter.com/janedoe', 1),
+    (NULL, '555-987-6543', 'linkedin.com/johndoe', 'twitter.com/susanjane', 2),
+    (NULL, '555-789-1234', 'linkedin.com/michael', 'twitter.com/mikemike', 3),
+    (NULL, '555-234-5678', 'linkedin.com/laurasmith', 'twitter.com/lauralaura', 4),
+    (NULL, '555-876-5432', 'linkedin.com/robert', 'twitter.com/robertrobert', 5),
+    (NULL, '555-456-7890', 'linkedin.com/emily', 'twitter.com/emilyemily', 6),
+    (NULL, '555-765-4321', 'linkedin.com/william', 'twitter.com/williamwilliam', 7),
+    (NULL, '555-345-6789', 'linkedin.com/jennifer', 'twitter.com/jenniferjennifer', 8),
+    (NULL, '555-654-3210', 'linkedin.com/daniel', 'twitter.com/danieldaniel', 9),
+    (NULL, '555-678-9012', 'linkedin.com/olivia', 'twitter.com/oliviaolivia', 10),
+    (NULL, '555-111-2222', 'linkedin.com/andrew', 'twitter.com/andrewandrew', 11),
+    (NULL, '555-333-4444', 'linkedin.com/sarah', 'twitter.com/sarahsarah', 12),
+    (NULL, '555-555-6666', 'linkedin.com/ryan', 'twitter.com/ryanryan', 13),
+    (NULL, '555-777-8888', 'linkedin.com/lisa', 'twitter.com/lisalisa', 14),
+    (NULL, '555-999-0000', 'linkedin.com/kevin', 'twitter.com/kevinkevin', 15),
+    (NULL, '555-222-3333', 'linkedin.com/megan', 'twitter.com/meganmegan', 16),
+    (NULL, '555-444-5555', 'linkedin.com/chris', 'twitter.com/chrischris', 17),
+    (NULL, '555-666-7777', 'linkedin.com/ashley', 'twitter.com/ashleyashley', 18),
+    (NULL, '555-888-9999', 'linkedin.com/mark', 'twitter.com/markmark', 19),
+    (NULL, '555-000-1111', 'linkedin.com/sophia', 'twitter.com/sophiasophia', 20);
 
 
 CREATE TABLE portfoliomatic.city(
@@ -141,15 +141,15 @@ VALUES
     (NULL,'Moscow', 9,1),
     (NULL,'Mexico City', 10,2),
     (NULL, 'Berlin', 4, 10),
-(NULL, 'Barcelona', 5, 7),
-(NULL, 'Toronto', 2, 3),
-(NULL, 'Rome', 3, 6),
-(NULL, 'San Francisco', 1, 9),
-(NULL, 'Dubai', 6, 1),
-(NULL, 'Singapore', 7, 5),
-(NULL, 'Sydney', 9, 4),
-(NULL, 'Amsterdam', 10, 8),
-(NULL, 'San Diego', 8, 2);
+    (NULL, 'Barcelona', 5, 7),
+    (NULL, 'Toronto', 2, 3),
+    (NULL, 'Rome', 3, 6),
+    (NULL, 'San Francisco', 1, 9),
+    (NULL, 'Dubai', 6, 1),
+    (NULL, 'Singapore', 7, 5),
+    (NULL, 'Sydney', 9, 4),
+    (NULL, 'Amsterdam', 10, 8),
+    (NULL, 'San Diego', 8, 2);
 
 
 CREATE TABLE portfoliomatic.summary(
@@ -263,12 +263,12 @@ VALUES
     (NULL, 'Harvard University', '06-07-22', '01-01-2024','Diploma in Information Technology',2, 5),
     (NULL, 'Stanford University', '06-07-22', '01-01-2024','Diploma in Business Administration',3, 9),
     (NULL, 'Oxford University', '06-07-22', '01-01-2024', 'Diploma in English Literature', 4, 7),
-(NULL, 'MIT (Massachusetts Institute of Technology)', '06-07-22', '01-01-2024', 'Diploma in Computer Science', 5, 2),
-(NULL, 'Yale University', '06-07-22', '01-01-2024', 'Diploma in Economics', 6, 8),
-(NULL, 'Cambridge University', '06-07-22', '01-01-2024', 'Diploma in Physics', 7, 4),
-(NULL, 'Princeton University', '06-07-22', '01-01-2024', 'Diploma in Mathematics', 8, 6),
-(NULL, 'Columbia University', '06-07-22', '01-01-2024', 'Diploma in History', 9, 10),
-(NULL, 'Berkeley University', '06-07-22', '01-01-2024', 'Diploma in Environmental Science', 10, 1);
+    (NULL, 'MIT (Massachusetts Institute of Technology)', '06-07-22', '01-01-2024', 'Diploma in Computer Science', 5, 2),
+    (NULL, 'Yale University', '06-07-22', '01-01-2024', 'Diploma in Economics', 6, 8),
+    (NULL, 'Cambridge University', '06-07-22', '01-01-2024', 'Diploma in Physics', 7, 4),
+    (NULL, 'Princeton University', '06-07-22', '01-01-2024', 'Diploma in Mathematics', 8, 6),
+    (NULL, 'Columbia University', '06-07-22', '01-01-2024', 'Diploma in History', 9, 10),
+    (NULL, 'Berkeley University', '06-07-22', '01-01-2024', 'Diploma in Environmental Science', 10, 1);
 
 
 

@@ -2,13 +2,17 @@
     display: flex;
     justify-content: center;
     align-items: border-box;
-    height: 100%;
+    height: 100vh;
     background: aquamarine;
 }
 
 .post {
     width: 500px;
     padding: 6px;
+}
+
+.form-contact {
+    margin-top: 15rem;
 }
 
 input,
@@ -25,4 +29,5 @@ textarea {
     width: 150px;
     padding: 6px;
     cursor: pointer;
+    background-color: antiquewhite;
 }

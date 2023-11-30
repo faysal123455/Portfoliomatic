@@ -15,7 +15,7 @@ const getWork = async () => {
 
 const createOneWork = async (data) => {
     const sql = `
-    NSERT INTO portfoliomatic.work
+    INSERT INTO portfoliomatic.work
     VALUES
     (NULL, 'Pernod Ricard', 'paris','14-01-23', '01-01-2024','Project Manager','1');`
 

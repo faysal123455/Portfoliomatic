@@ -3,18 +3,17 @@ function Validation(values) {
     const email_pattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
     const password_pattern = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])[a-zA-Z0-9]{8,}$/
 
-    if (values.name === "") {
-        error.name = "Name should not be emplty"
+    if (values.firstname === "") {
+        error.firstname = "first name should not be emplty"
     }
 
-    else {
-        error.name= ""
+    if (values.lastname === "") {
+        error.lastname = "last name should not be emplty"
     }
 
-    /*  */
 
     if (values.email === "") {
-        error.email = "Name should not be emplty"
+        error.email = "Email should not be emplty"
     }
 
     else if (!email_pattern.test(values.email)) {

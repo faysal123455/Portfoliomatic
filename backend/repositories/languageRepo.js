@@ -4,6 +4,7 @@ const getLanguage = async () => {
     const sql = `
     SELECT language.*
     FROM portfoliomatic.language;`
+    
     try {
         const [results] = await dbConnection.execute(sql);
         return results;

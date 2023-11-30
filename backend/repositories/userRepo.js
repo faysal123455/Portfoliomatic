@@ -41,14 +41,14 @@ const getLoginUser = async (data) => {
     } catch (error) {
         return error;
     }
-
+    
     // vérifier le hachage du mot de passe
 };
 
 const getSignupUser = async (data) => {
     const sql = `
     INSERT INTO portfoliomatic.user
-    VALUES(NULL, :firstname, :lastname, :email, :password, :phone)
+    VALUES(NULL, :firstname, :lastname, :email, :password)
     ;
     `;
 

@@ -3,3 +3,7 @@
     height: 100vh;
     background-color: rgb(127, 134, 132);
 }
+
+.text-danger {
+    color: red;
+}

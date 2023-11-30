@@ -6,6 +6,11 @@ const DashboardPage = ()  => {
         <div className="container-dashboard">
             <h1>Resume Generator</h1>
             <p>create your own portfolio</p>
+            <form>
+                <label>Enter your name:
+                    <input type="text" />
+                </label>
+            </form>
         </div>
 
     <Footer/>

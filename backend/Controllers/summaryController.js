@@ -1,3 +1,6 @@
+import dbConnection from '../service/dbconnection.js';
+
+
 import { getSummary, createOneSummary } from "../repositories/summaryRepo.js";
 
 const summarys = (req, res) => {
@@ -9,16 +12,62 @@ const summarys = (req, res) => {
         });
     })
 }
+const summaryById = async (req, res) => {
+    try {
+        const { id } = req.params;
+        const [rows, fields] = await dbConnection.query("select * from summary where id = ?", [id]);
+        res.json({
+            data: rows
+        });
+    } catch (error) {
+        console.log(error);
+        res.json({
+            status: "error"
+        });
+    }
+};
 
-const createSummary = ( req, res) => {
+const createSummary = (req, res) => {
     console.log(req.body);
     createOneSummary(req.body).then(data => {
         return res.status(200).json({
-            status:200,
+            status: 200,
             message: "all good for summary",
             data: data,
         });
     })
-}
+};
 
-export { summarys, createSummary }
+const update = async (req, res) => {
+    try {
+        const { name, level, cv_id } = req.body
+        const { id } = req.params
+        const sql = "update summary set name = ?, level = ?, cv_id = ? where id = ?"
+        const [rows, fields] = await dbConnection.query(sql, [name, level, cv_id, id])
+        res.json({
+            data: rows
+        })
+    } catch (error) {
+        console.log(error);
+        res.json({
+            status: "error"
+        })
+    }
+};
+
+const summaryDelete = async (req, res) => {
+    try {
+        const { id } = req.params
+        const [rows, fields] = await dbConnection.query("delete from language where id = ?", [id])
+        res.json({
+            data: rows
+        })
+    } catch (error) {
+        console.log(error);
+        res.json({
+            status: "error"
+        })
+    }
+};
+
+export { summarys, createSummary, summaryById, update, summaryDelete }
