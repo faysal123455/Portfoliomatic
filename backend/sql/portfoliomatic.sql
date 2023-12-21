@@ -13,26 +13,26 @@ CREATE TABLE portfoliomatic.user(
 
 INSERT INTO portfoliomatic.user
 VALUES
-    (NULL, 'faysall','sarker','faisaladnan700@gmail.com','Faysal1'),
-    (NULL, 'tina','mina','tinamina77100@gmail.com','mina1'),
-    (NULL, 'salina','balina','kalinaa75000@gmail.com','kalina1'),
-    (NULL, 'John', 'Doe', 'johndoe@example.com', 'johndoe'),
-    (NULL, 'Alice', 'Johnson', 'alice@example.com', 'alicej'),
-    (NULL, 'Bob', 'Smith', 'bob@example.com', 'bobsmith'),
-    (NULL, 'Emily', 'Wilson', 'emily@example.com', 'emilyw'),
-    (NULL, 'David', 'Brown', 'david@example.com', 'davidb'),
-    (NULL, 'Ella', 'Thomas', 'ella@example.com', 'ellat'),
-    (NULL, 'Michael', 'Lee', 'michael@example.com', 'michaellee'),
-    (NULL, 'Sophia', 'Clark', 'sophia@example.com', 'sophiaclark'),
-    (NULL, 'James', 'White', 'james@example.com', 'jameswhite'),
-    (NULL, 'Lily', 'Harris', 'lily@example.com', 'lilyharris'),
-    (NULL, 'William', 'Martin', 'william@example.com', 'william'),
-    (NULL, 'Olivia', 'Anderson', 'olivia@example.com', 'olivia'),
-    (NULL, 'Daniel', 'Thompson', 'daniel@example.com', 'daniel123'),
-    (NULL, 'Ava', 'Jackson', 'ava@example.com', 'avaj'),
-    (NULL, 'Alexander', 'Wilson', 'alex@example.com', 'alexwilson'),
-    (NULL, 'Mia', 'Miller', 'mia@example.com', 'miamiller'),
-    (NULL, 'Ethan', 'Anderson', 'ethan@example.com', 'ethan123');
+    (NULL, 'faysall','sarker','faisaladnan700@gmail.com','$argon2i$v=19$m=16,t=2,p=1$UlFFcDVDRmJ5dHJFYTdKYQ$mdpqwcU7ktM0CZP3UFwnLg'),
+    (NULL, 'tina1','mina','tinamina77100@gmail.com','$argon2i$v=19$m=16,t=2,p=1$RUtOeGQxSmlOcmRCTlZHOA$Ho/uoAUQWzs1xzDApjcEIw'),
+    (NULL, 'salina1','balina','kalinaa75000@gmail.com','$argon2i$v=19$m=16,t=2,p=1$QkkwdXRsTVZvT3NNelp1Vg$z+dTlbX6iQQDcoTizN0M1Q'),
+    (NULL, 'John1', 'Doe', 'johndoe@example.com', '$argon2i$v=19$m=16,t=2,p=1$eFhwaldpM3AxMVdJN2RKTA$7aO42gs4TdbjsaJgKujVXg'),
+    (NULL, 'Alice1', 'Johnson', 'alice@example.com', '$argon2i$v=19$m=16,t=2,p=1$R1diRHJDRnVIb0FCT243Zw$SyWMrOvsRlmqYOZzjNMAsA'),
+    (NULL, 'Bob1', 'Smith', 'bob@example.com', '$argon2i$v=19$m=16,t=2,p=1$cnp0VlRyNWNsaVhGam1NSg$AMw9IO9aRzrKFgqK/JFMNQ'),
+    (NULL, 'Emily1', 'Wilson', 'emily@example.com', '$argon2i$v=19$m=16,t=2,p=1$SlZHWmNjNUNZQW05eVVNeg$JoI2cW0O92fB6ZGO9W9bpw'),
+    (NULL, 'David1', 'Brown', 'david@example.com', '$argon2i$v=19$m=16,t=2,p=1$NWdCMjNuWVNjT3NrZkRXVQ$/628/56nWsgDsl2EPA2zrA'),
+    (NULL, 'Ella1', 'Thomas', 'ella@example.com', '$argon2i$v=19$m=16,t=2,p=1$ZGo2b1VmenNzYnpBdDcxZg$oYujVQSFAqMqXG1OBsjMPw'),
+    (NULL, 'Michael1', 'Lee', 'michael@example.com', '$argon2i$v=19$m=16,t=2,p=1$MWdKbXFrc2lOOGlBSmRrNg$9CAjERm07vcpeivT8KrG7A'),
+    (NULL, 'Sophia1', 'Clark', 'sophia@example.com', '$argon2i$v=19$m=16,t=2,p=1$QlpjVmRtaEhFblJ1MVdwdA$yPCZ0N3KDStd3D5sFfnZkQ'),
+    (NULL, 'James1', 'White', 'james@example.com', '$argon2i$v=19$m=16,t=2,p=1$WnFTOTFab08xeDBVeUg4ag$DUERzmA7IksyJm4uGrmC6w'),
+    (NULL, 'Lily1', 'Harris', 'lily@example.com', '$argon2i$v=19$m=16,t=2,p=1$N2h5Nk9xUzF4eVpHTm95dg$6n7Jr3Z6TvB0fHU0SFun+Q'),
+    (NULL, 'William1', 'Martin', 'william@example.com', '$argon2i$v=19$m=16,t=2,p=1$ZFlEZlRpT29kNm12eGZOdA$zJaBRpjRCiZ2KxhDxW4qGA'),
+    (NULL, 'Olivia1', 'Anderson', 'olivia@example.com', '$argon2i$v=19$m=16,t=2,p=1$RDNhcE9YeENzcHRQR3hxUA$MwbTSfDocvKq855CcVvogg'),
+    (NULL, 'Daniel1', 'Thompson', 'daniel@example.com', '$argon2i$v=19$m=16,t=2,p=1$NHBVWnEzT0plaENBS0xLbQ$bjIs+mdmEm8+iF2mplfd+g'),
+    (NULL, 'Ava1', 'Jackson', 'ava@example.com', '$argon2i$v=19$m=16,t=2,p=1$S2x5d25aOE5DOEY3QUp6Vw$8g5aWbfBWzGPJ5DiCBpitA'),
+    (NULL, 'Alexander1', 'Wilson', 'alex@example.com', '$argon2i$v=19$m=16,t=2,p=1$emJmc1Q3dXZLRHFNaDNkMw$TORRjBImzlR1yvRaIFM/IQ'),
+    (NULL, 'Mia1', 'Miller', 'mia@example.com', '$argon2i$v=19$m=16,t=2,p=1$dXVQUVVhYUVUeXVNTGk3Wg$/fGY/vdmxAC2AekqFk1FUg'),
+    (NULL, 'Ethan1', 'Anderson', 'ethan@example.com', '$argon2i$v=19$m=16,t=2,p=1$aWhmTGFLTGlncFRyRlpNQQ$kIhjFT53ZUy5vWx27QnIHw');
 
 
 
@@ -226,17 +226,17 @@ VALUES
 
 
 
-CREATE TABLE portfoliomatic.skills(
+CREATE TABLE portfoliomatic.skill(
     id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
     name VARCHAR(50) NOT NULL,
     cv_id INT UNSIGNED NOT NULL,
     FOREIGN KEY(cv_id) REFERENCES portfoliomatic.cv(id)
 );
-INSERT INTO portfoliomatic.skills
+INSERT INTO portfoliomatic.skill
 VALUES
-    (NULL, 'Problem Solving','1'),
-    (NULL, 'Leadership','2'),
-    (NULL, 'Programming','3'),
+    (NULL, 'Problem Solving',1),
+    (NULL, 'Leadership',2),
+    (NULL, 'Programming',3),
     (NULL, 'Communication', 4),
     (NULL, 'Creativity', 5),
     (NULL, 'Time Management', 6),
@@ -250,12 +250,12 @@ CREATE TABLE portfoliomatic.education(
     id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
     name VARCHAR(50) NOT NULL,
     date_start VARCHAR(50) NOT NULL,
-    data_end VARCHAR(50) NOT NULL,
+    date_end VARCHAR(50) NOT NULL,
     details VARCHAR(255) NOT NULL,
     cv_id INT UNSIGNED NOT NULL,
     city_id INT UNSIGNED NOT NULL,
-    FOREIGN KEY(city_id) REFERENCES portfoliomatic.city(id),
-    FOREIGN KEY(cv_id) REFERENCES portfoliomatic.cv(id)
+    FOREIGN KEY(cv_id) REFERENCES portfoliomatic.cv(id),
+    FOREIGN KEY(city_id) REFERENCES portfoliomatic.city(id)
 );
 INSERT INTO portfoliomatic.education
 VALUES

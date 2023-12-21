@@ -7,7 +7,8 @@ import { useState } from "react";
 
 
 function SignUp() {
-    const Navigate = useNavigate
+    const navigate = useNavigate();
+
     const [values, setValues] = useState({
         firstname: '',
         lastname: '',
@@ -32,10 +33,9 @@ function SignUp() {
             password: values.password[0]
         });
 
-        Navigate('/public')
-
         // console.log(values);
 
+        navigate('/login')
     }
 
     return (
@@ -46,12 +46,12 @@ function SignUp() {
                 </div>
                 <div className="card">
                     <form action="" onSubmit={handleSubmit}>
-                        <div className="email">    
+                        <div className="email">
                             <input type="text" placeholder="FirstName"
                                 name='firstname' onChange={handleInput} required="" />
                             {errors.firstname && <span className='text-danger'> {errors.firstname}</span>}
                         </div>
-                        <div className="email">    
+                        <div className="email">
                             <input type="text" placeholder="LastName"
                                 name='lastname' onChange={handleInput} required="" />
                             {errors.lastname && <span className='text-danger'> {errors.lastname}</span>}

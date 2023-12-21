@@ -10,6 +10,7 @@ const usersRouter = express.Router();
 
 usersRouter.get('/', users);
 usersRouter.post('/', createUser);
+
 usersRouter.post('/login', checkUserLogin);
 usersRouter.post('/signup', signupUser);
 

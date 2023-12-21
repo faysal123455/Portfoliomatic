@@ -52,9 +52,11 @@ nav a {
     text-decoration: none;
 }
 
-h3 {
+h1 {
     color:rgb(254, 240, 255);
     text-decoration: none;
+    font-weight: 500;
+    font-size: 20px;
 }
 
 nav a:hover {

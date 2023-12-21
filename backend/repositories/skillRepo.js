@@ -17,9 +17,8 @@ const createOneSkill = async (data) => {
     const sql = `
     INSERT INTO portfoliomatic.skill
     VALUES
-        (NULL, 'Problem Solving','1'),
-        (NULL, 'Leadership','1');`
-
+        (NULL, :name, cv_id );
+        `;
 
     try {
         const [results] = await dbConnection.execute(sql, data);

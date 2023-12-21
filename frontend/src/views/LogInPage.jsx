@@ -3,12 +3,16 @@ import "./LogInPage.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEnvelope, faLock } from "@fortawesome/free-solid-svg-icons";
 import { Link, useNavigate } from "react-router-dom";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import './LoginValidation';
 import validation from "./LoginValidation";
 import { loginUser } from "../services/api";
+import { UserContext } from "../contexts/UserContext";
 
 function LogInPage() {
+
+  const { user, setUser } = useContext(UserContext);
+
   const navigate = useNavigate();
   const [values, setValues] = useState({
     email: '',
@@ -24,7 +28,7 @@ function LogInPage() {
   const handleSubmit = async (event) => {
     event.preventDefault();
     setErrors(validation(values));
-    console.log(values);
+    // console.log(values);
     
     // navigate('/public')
 
@@ -34,6 +38,8 @@ function LogInPage() {
     })
 
     if (request.status === 200) {
+
+      setUser(request.data);
       navigate('/');
     }
 

@@ -4,9 +4,7 @@ import { archivments, createArchivment, updateArchivment } from '../Controllers/
 const archivmentsRouter = express.Router();
 
 archivmentsRouter.get('/', archivments);
-
 archivmentsRouter.post('/', createArchivment);
-
 archivmentsRouter.put('/:id', updateArchivment);
 
 

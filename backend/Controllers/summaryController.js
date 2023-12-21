@@ -1,6 +1,5 @@
 import dbConnection from '../service/dbconnection.js';
 
-
 import { getSummary, createOneSummary } from "../repositories/summaryRepo.js";
 
 const summarys = (req, res) => {
@@ -12,6 +11,7 @@ const summarys = (req, res) => {
         });
     })
 }
+
 const summaryById = async (req, res) => {
     try {
         const { id } = req.params;
@@ -36,14 +36,14 @@ const createSummary = (req, res) => {
             data: data,
         });
     })
-};
+}
 
 const update = async (req, res) => {
     try {
-        const { name, level, cv_id } = req.body
+        const { goal, cv_id } = req.body
         const { id } = req.params
-        const sql = "update summary set name = ?, level = ?, cv_id = ? where id = ?"
-        const [rows, fields] = await dbConnection.query(sql, [name, level, cv_id, id])
+        const sql = "update summary set goal =?, cv_id = ? where id = ?"
+        const [rows, fields] = await dbConnection.query(sql, [goal, cv_id, id])
         res.json({
             data: rows
         })

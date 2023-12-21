@@ -40,10 +40,10 @@ const createEducation = ( req, res) => {
 
 const update = async (req, res) => {
     try {
-        const { name, level, cv_id } = req.body
+        const { name, date_start, date_end, details, cv_id, city_id } = req.body
         const { id } = req.params
-        const sql = "update education set name = ?, level = ?, cv_id = ? where id = ?"
-        const [rows, fields] = await dbConnection.query(sql, [name, level, cv_id, id])
+        const sql = "update education set name = ?, date_start = ?, date_end = ?, details = ?, cv_id = ?, city_id = ? where id = ?"
+        const [rows, fields] = await dbConnection.query(sql, [name, date_start, date_end, details, cv_id, city_id, id])
         res.json({
             data: rows
         })

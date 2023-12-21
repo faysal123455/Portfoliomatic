@@ -12,14 +12,14 @@ const AdminNav = () => {
         <a className="nav-items">Admin</a>
       </Link>
 
-      <Link to="/dashboard" relative="path">
+      <Link to="/admin/dashboard" relative="path">
         <a className="nav-items">Dashboard</a>
       </Link>
 
-      <Link to="/experiences" relative="path">
+      <Link to="/admin/experiences" relative="path">
         <a className="nav-items">Experiences</a>
       </Link>
-      <Link to="/works" relative="path">
+      <Link to="/admin/work" relative="path">
         <a className="nav-items">Works</a>
       </Link>
 

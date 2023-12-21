@@ -5,37 +5,119 @@ import "./AboutPage.css";
 
 const AboutPage = ()  => {
     return <section className="container-about">
-        <section className="info-about">
-            <section className="slider-container about">
-                <section className="full">
-                    <img src="https://www.presse-tribune.fr/rep/rep_article/20230918142736.jpeg" />
-                    <figcaption>
-                        <span>
-                            About Bibis
-                        </span>
-                    </figcaption>
-                </section>
-            </section>
 
-            <section className="about-content">
-                <section className="about-standfirst">
-                    <section>
-                    </section>
-                    <p>Bibis is a cosy neighbourhood cafe serving</p>
-                    <p>breakfast, lunch and brunch at the weekends. The</p>
-                    <p>ever-changing and evolving menus are driven by</p>
-                    <p>creatiity, innoation and the use of prime</p>
-                    <p>produce from Ireland and abraod. Chef and owner</p>
-                    <p>Maisha Lenehan, working with her brother Geoff,</p>
-                    <p>have combined their individual skills to create a</p>
-                    <p>unique dining experience in the heart of Dublin 8.</p>
-                </section>
+        <section className="">
+            <div className="">
+                <div className="ek">
+                    <div className="">
+                        <div className="">
+                            <h3 className="">
+                                Welcome To Lorem is the world
+                            </h3>
+                            <p className="">
+                                Lorem Ipsum is simply dummy text of the printing and typesetting
+                                industry. <br />
+                                Lorem Ipsum has been the industrys standard dummy text.
+                            </p>
+                        </div>
+                    </div>
+                </div>
 
-                <section className="about-img">
-                    <img src="https://www.goskills.com/blobs/blogs/460/5aa2e571-4597-48f2-8045-37013ee9de5d_lossy.webp" />
-                </section>
-            </section>
+                <div className="dui">
+                    <div className="">
+                        <div className="about_header_main">
+                            <h4 className="about_heading">
+                                Lorem Ipsum is simply dummy text of the printing industry.
+                            </h4>
+                            <p className="">
+                                Contrary to popular belief, Lorem Ipsum is not simply random text.
+                                It has roots in a piece of classical Latin literature from 45 BC,
+                                making it over 2000 years old.
+                            </p>
+                            <p className="">
+                                {" "}
+                                Richard McClintock, a Latin professor at Hampden-Sydney College in
+                                Virginia, looked up one of the more obscure Latin words,
+                                consectetur, from a Lorem Ipsum passage.
+                            </p>
+                        </div>
+                    </div>
+                    <div className="">
+                        <div className="img_about">
+                            <img
+                                src="https://i.ibb.co/qpz1hvM/About-us.jpg"
+                                alt=""
+                            />
+                        </div>
+                    </div>
+                </div>
+
+
+                <div className="tin">
+                    
+                    <div className="three-icon">
+                        <div className="about_content_box_all">
+                            <div className="about_detail">
+                                <div className="about_icon">
+                                    <i className="fas fa-pencil-alt" />
+                                </div>
+                                <h5 className="">
+                                    Creative Design
+                                </h5>
+                                <p className="">
+                                    Lorem Ipsum is simply dummy text of the printing and typesetting
+                                    industry.{" "}
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    
+
+                    <div className="three-icon">
+                        <div className="about_content_box_all">
+                            <div className="about_detail">
+                                <div className="about_icon">
+                                    <i className="fab fa-angellist" />
+                                </div>
+                                <h5 className="">
+                                    We make Best Result
+                                </h5>
+                                <p className="">
+                                    Lorem Ipsum is simply dummy text of the printing and typesetting
+                                    industry.{" "}
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div className="three-icon">
+                        <div className="about_content_box_all">
+                            <div className="about_detail">
+                                <div className="about_icon">
+                                    <i className="fas fa-paper-plane" />
+                                </div>
+                                <h5 className="">
+                                    best platform{" "}
+                                </h5>
+                                <p className="">
+                                    Lorem Ipsum is simply dummy text of the printing and typesetting
+                                    industry.{" "}
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+
+
+            </div>
         </section>
+
+
+
         <Header/>
         <Footer/>
     </section>

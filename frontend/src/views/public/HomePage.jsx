@@ -9,27 +9,37 @@ import three from '../../assets/feature-3-4e87a82f83e260488c36f8105e26f439fdc3ee
 const HomePage = () => {
     return <>
         <div className="container-home">
+            
 
-            <header className="header bg-bright" id="header">
-                <div className="container">
-                    <div className="header-content text-center">
-                        <h6 className="text-uppercase text-blue-dark fs-14 fw-6 ls-1">
-                            online resume builder
-                        </h6>
-                        <h1 className="lg-title">
+            <header className="headline-h" id="headline-h">
+                
+                <div className="">
+                    
+                    <div className="header-content1">
+                        
+                        <h1 className="big-title">
                             Only 2% of resumes make it pas the first round. Be in the top 2%
                         </h1>
-                        <p className="text-dark fs-18">
+
+                        <p className="for-free">
                             Use professional field-tested resume templates that follow that exact
                             resume rules employers look for. Easy to use and done within minutes
                             - try now for free!
                         </p>
+
                         <a href="resume.html" className="btn btn-primary text-uppercase">
                             create my resume
                         </a>
+
                     </div>
                 </div>
             </header>
+
+
+            
+
+
+
             <div className="section-one">
                 <div className="container">
                     <div className="section-one-content">
@@ -56,6 +66,9 @@ const HomePage = () => {
                     </div>
                 </div>
             </div>
+
+
+
             <div className="section-two bg-bright">
                 <div className="container">
                     <div className="section-two-content">
@@ -101,6 +114,9 @@ const HomePage = () => {
                     </div>
                 </div>
             </div>
+
+
+
         </div>
         <Footer />
     </>

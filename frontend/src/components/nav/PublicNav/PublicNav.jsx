@@ -1,8 +1,9 @@
 import "./PublicNav.css";
-import { useRef } from "react";
+import { useContext, useRef } from "react";
 import { Link } from "react-router-dom";
 import { faBars, faXmark } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { UserContext } from "../../../contexts/UserContext";
 /*
 const PublicNav = () => {
   return (
@@ -27,6 +28,8 @@ const PublicNav = () => {
 function PublicNav() {
   const navRef = useRef();
 
+  const { user, setUser } = useContext(UserContext);
+
   const showNavbar = () => {
     navRef.current.classList.toggle(
       "responsive_nav"
@@ -35,24 +38,27 @@ function PublicNav() {
 
   return (
     <header>
-      <Link to="/" relative="path"><h3>Portfoliomatic</h3></Link>
+      <Link to="/" relative="path"><h1>Portfoliomatic</h1></Link>
+
+
 
       <nav ref={navRef}>
-        <Link to="/public" relative="path">
-          <a className="">Public</a>
-        </Link>
         <Link to="/contact" relative="path">
-          <a className="">Contact</a>
+          Contact
         </Link>
         <Link to="/about" relative="path">
-          <a className="">About</a>
+          About
         </Link>
-        <Link to="/login" relative="path">
-        <a className="">LogIn</a>
-        </Link>
-        <Link to="/signup" relative="path">
-        <a className="">SignUp</a>
-        </Link>
+        {
+          !user ? <><Link to="/login" relative="path">
+            LogIn
+          </Link>
+            <Link to="/signup" relative="path">
+              SignUp
+            </Link></> : <></>
+
+        }
+
         <button
           className="nav-btn nav-close-btn"
           onClick={showNavbar}>

@@ -5,7 +5,6 @@ const RootLayout = () => {
         <>
 
             <AdminNav />
-            <h1>Portfoliomatic Admin</h1>
             <Outlet />
         </>
     );

@@ -41,6 +41,7 @@ const loginUser = (req, res) => {
 };
 
 const signupUser = async (req, res) => {
+    console.log('bodyHashed');
     const bodyHashed = {
         ...req.body,
         password: await argon2.hash(req.body.password),

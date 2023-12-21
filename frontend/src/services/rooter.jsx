@@ -27,7 +27,7 @@ const rooter = createBrowserRouter([
     path: "/",
     element: <PublicLayout />,
     children: [
-      { path: "/public", element: <HomePage /> },
+      { path: "/", element: <HomePage /> },
       { path: "/about", element: <AboutPage />},
       { path: "/contact", element: <ContactPage />},
       { path: "/cvtemplates", element: <CvTemplatesPage />},

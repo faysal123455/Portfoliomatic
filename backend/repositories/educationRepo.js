@@ -15,10 +15,11 @@ const getEducation = async () => {
 
 
 const createOneEducation = async (data) => {
-    const sql =`
+    const sql = `
     INSERT INTO portfoliomatic.education
     VALUES
-        (NULL, 'simplon university', 'New York City','06-07-22', '01-01-2024','Diploma in Hospitality Management','1');`
+        (NULL, :name, :date_start, :date_end, :details, :cv_id, :city_id );
+        `;
     
     
     try {

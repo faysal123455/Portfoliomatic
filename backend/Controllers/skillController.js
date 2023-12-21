@@ -40,10 +40,10 @@ const createSkill = ( req, res) => {
 
 const update = async (req, res) => {
     try {
-        const { name, level, cv_id } = req.body
+        const { name, cv_id } = req.body
         const { id } = req.params
-        const sql = "update skills set name = ?, level = ?, cv_id = ? where id = ?"
-        const [rows, fields] = await dbConnection.query(sql, [name, level, cv_id, id])
+        const sql = "update skills set name = ?, cv_id = ? where id = ?"
+        const [rows, fields] = await dbConnection.query(sql, [name, cv_id, id])
         res.json({
             data: rows
         })

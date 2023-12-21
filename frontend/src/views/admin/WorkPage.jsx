@@ -1,9 +1,8 @@
 import Footer from "../../components/footer/Footer";
+import { createPersonalInformations } from "../../services/api";
 import "./WorkPage.css";
 
 const WorkPage = () => {
-
-    // // form repeater
     // (document).ready(function () {
     //     ('.repeater').repeater({
     //         initEmpty: false,
@@ -16,19 +15,41 @@ const WorkPage = () => {
     //         hide: function (deleteElement) {
     //             (this).slideUp(deleteElement);
     //             setTimeout(() => {
-    //                 generateCV();
     //             }, 500);
     //         },
     //         isFirstItemUndeletable: true
     //     })
     // })
 
+    
+
+
+
+
+
+
+    const handleSubmit = e => {
+        e.preventDefault();
+        const formData = new FormData(e.target);
+
+
+        createPersonalInformations(formData);
+
+        // console.log(values);
+
+        // navigate('/login')
+
+
+    }
+
     return (
         <>
             <section id="about-sc">
                 <div className="container">
                     <div className="about-cnt">
-                        <form action="" className="cv-form" id="cv-form">
+                        <form onSubmit={handleSubmit} className="cv-form" id="cv-form" encType="multipart/form-data">
+                            
+
                             <div className="cv-form-blk">
                                 <div className="cv-form-row-title">
                                     <h3>personal information</h3>
@@ -154,7 +175,13 @@ const WorkPage = () => {
                                 </div>
                             </div>
 
-                            <div className="cv-form-blk">
+                            
+                            <input type="submit" />
+
+
+
+
+                            {/* <div className="cv-form-blk">
                                 <div className="cv-form-row-title">
                                     <h3>work experience</h3>
                                 </div>
@@ -264,6 +291,9 @@ const WorkPage = () => {
                                     </button>
                                 </div>
                             </div>
+
+
+
 
                             <div className="cv-form-blk">
                                 <div className="cv-form-row-title">
@@ -376,6 +406,10 @@ const WorkPage = () => {
                                 </div>
                             </div>
 
+                            
+
+
+
                             <div className="cv-form-blk">
                                 <div className="cv-form-row-title">
                                     <h3>achievements</h3>
@@ -435,6 +469,11 @@ const WorkPage = () => {
                                 </div>
                             </div>
 
+                            
+
+
+
+
                             <div className="cv-form-blk">
                                 <div className="cv-form-row-title">
                                     <h3>language</h3>
@@ -470,7 +509,6 @@ const WorkPage = () => {
                                                         />
                                                         <span className="form-text" />
                                                     </div>
-                                
                                                 </div>
                                                 <button
                                                     data-repeater-delete=""
@@ -492,6 +530,12 @@ const WorkPage = () => {
                                     </button>
                                 </div>
                             </div>
+
+                            
+
+
+
+
 
                             <div className="cv-form-blk">
                                 <div className="cv-form-row-title">
@@ -535,6 +579,10 @@ const WorkPage = () => {
                                 </div>
                             </div>
 
+                            
+
+
+
                             <div className="cv-form-blk">
                                 <div className="cv-form-row-title">
                                     <h3>Social </h3>
@@ -575,7 +623,9 @@ const WorkPage = () => {
                                         +
                                     </button>
                                 </div>
-                            </div>
+                            </div> */}
+
+
 
                         </form>
                     </div>
