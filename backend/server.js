@@ -48,6 +48,10 @@ const options = {
 
 const PORT = 3000;
 
-const server = config.environment === 'dev' ? https.createServer(options, app) : http.createServer(app);
+//creatiojn  du serveur http
+
+const server = config.environment === 'dev'
+    ? https.createServer(options, app)
+    : http.createServer(app);
 
 export default server;
