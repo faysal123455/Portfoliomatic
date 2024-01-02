@@ -1,13 +1,11 @@
-import Header from "../../components/header/Header";
 import Footer from "../../components/footer/Footer";
 import "./AboutPage.css";
 
 
-const AboutPage = ()  => {
-    return <section className="container-about">
+const AboutPage = () => {
+    return (
+<div className="container-about">
 
-        <section className="">
-    
             <div className="responsive-container-block bigContainer">
                 <div className="responsive-container-block Container bottomContainer">
                     <div className="allText bottomText">
@@ -24,7 +22,7 @@ const AboutPage = ()  => {
                         </a>
                     </div>
                     <div className="videoContainer">
-                        <iframe allowfullscreen="allowfullscreen" class="mainVideo" controls="controls" src="https://www.youtube.com/embed/svg%3E?">
+                        <iframe allowFullScreen="allowFullScreen" className="mainVideo" controls="controls" src="https://www.youtube.com/embed/svg%3E?">
                         </iframe>
                         <img
                             className="dotsImg image-block"
@@ -34,15 +32,12 @@ const AboutPage = ()  => {
                 </div>
             </div>
 
+<Footer />
+</div>
+    
 
-        </section>
-
-
-
-        <Header/>
-        <Footer/>
-    </section>
-}
+    );
+};
 
 
 export default AboutPage;

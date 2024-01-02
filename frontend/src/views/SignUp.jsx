@@ -57,7 +57,7 @@ function SignUp() {
                             {errors.lastname && <span className='text-danger'> {errors.lastname}</span>}
                         </div>
                         <div className="email">
-                            <input type="text" placeholder="Email or Phone"
+                            <input type="text" placeholder="Email"
                                 name='email' onChange={handleInput} required="" />
                             {errors.email && <span className='text-danger'> {errors.email}</span>}
                         </div>

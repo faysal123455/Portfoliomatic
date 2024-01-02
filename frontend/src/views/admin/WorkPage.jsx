@@ -1,27 +1,13 @@
 import Footer from "../../components/footer/Footer";
+import { useState } from "react";
+
 import { createPersonalInformations } from "../../services/api";
+
 import "./WorkPage.css";
+import countrydata from "./Countrydata.json";
+
 
 const WorkPage = () => {
-    // (document).ready(function () {
-    //     ('.repeater').repeater({
-    //         initEmpty: false,
-    //         defaultValues: {
-    //             'text-input': ''
-    //         },
-    //         show: function () {
-    //             (this).slideDown();
-    //         },
-    //         hide: function (deleteElement) {
-    //             (this).slideUp(deleteElement);
-    //             setTimeout(() => {
-    //             }, 500);
-    //         },
-    //         isFirstItemUndeletable: true
-    //     })
-    // })
-
-    
 
     const handleSubmit = e => {
         e.preventDefault();
@@ -30,13 +16,33 @@ const WorkPage = () => {
 
         createPersonalInformations(formData);
 
-        // console.log(values);
+        console.log(formData);
 
         // navigate('/login')
-
-
     }
 
+    const [countryid, setCountryid] = useState('');
+    const [state, setState] = useState([]);
+    const [stateid, setStateid] = useState('');
+    
+
+        const handlecountry = (e) => {
+            const getcountryId = e.target.value;
+        
+
+            const getStatedata = countrydata.find(country => country.country_id === getcountryId).states;
+            setState(getStatedata);
+            console.log(getcountryId);
+    }
+
+
+    const handlestate = (e) => {
+        const stateid = e.target.value;
+        console.log(stateid);
+        setStateid(stateid);
+    }
+
+    
     return (
         <>
             <section id="about-sc">
@@ -44,6 +50,7 @@ const WorkPage = () => {
                     <div className="about-cnt">
                         <form onSubmit={handleSubmit} className="cv-form" id="cv-form" encType="multipart/form-data">
                             
+                            {/* personal information */}
 
                             <div className="cv-form-blk">
                                 <div className="cv-form-row-title">
@@ -93,20 +100,6 @@ const WorkPage = () => {
                                                 accept="image/*"
                                                 onchange="previewImage()"
                                             />
-                                        </div>
-                                        <div className="form-elem">
-                                            <label htmlFor="" className="form-label">
-                                                Designation
-                                            </label>
-                                            <input
-                                                name="designation"
-                                                type="text"
-                                                className="form-control designation"
-                                                id=""
-                                                onkeyup="generateCV()"
-                                                placeholder="e.g. Sr.Accountants"
-                                            />
-                                            <span className="form-text" />
                                         </div>
                                         <div className="form-elem">
                                             <label htmlFor="" className="form-label">
@@ -174,9 +167,9 @@ const WorkPage = () => {
                             <input type="submit" />
 
 
+                            {/* work experience */}
 
-
-                            {/* <div className="cv-form-blk">
+                             <div className="cv-form-blk">
                                 <div className="cv-form-row-title">
                                     <h3>work experience</h3>
                                 </div>
@@ -213,15 +206,39 @@ const WorkPage = () => {
                                                     </div>
                                                     <div className="form-elem">
                                                         <label htmlFor="" className="form-label">
-                                                            Location
+                                                            Country
                                                         </label>
-                                                        <input
-                                                            name="exp_location"
-                                                            type="text"
-                                                            className="form-control exp_location"
-                                                            id=""
-                                                            onkeyup="generateCV()"
-                                                        />
+                                                        <select name='country' className="form-control" onChange={(e) => handlecountry(e)}>
+                                                            <option value=""></option>
+                                                            {
+                                                                countrydata.map((getcountry, index) => (
+                                                                    <option value={getcountry.country_id} key={index}>{getcountry.country_name}</option>
+                                                                ))
+                                                            }
+
+                                                        </select>
+
+                                                        <span className="form-text" />
+                                                    </div>
+
+
+
+
+
+                                                    <div className="form-elem">
+                                                        <label htmlFor="" className="form-label">
+                                                            City
+                                                        </label>
+                                                        <select name='city' className="form-control" onChange={(e) => handlestate(e)}>
+                                                            <option value=""></option>
+                                                            {
+                                                                state.map((getstate, index) => (
+                                                                    <option value={getstate.state_id} key={index}>{getstate.state_name}</option>
+                                                                ))
+                                                            }
+
+                                                        </select>
+
                                                         <span className="form-text" />
                                                     </div>
                                                 </div>
@@ -285,9 +302,9 @@ const WorkPage = () => {
                                         +
                                     </button>
                                 </div>
-                            </div>
+                            </div> 
 
-
+                            {/* education */}
 
 
                             <div className="cv-form-blk">
@@ -327,17 +344,64 @@ const WorkPage = () => {
                                                     </div>
                                                     <div className="form-elem">
                                                         <label htmlFor="" className="form-label">
-                                                            City
+                                                            Country
                                                         </label>
-                                                        <input
-                                                            name="edu_city"
-                                                            type="text"
-                                                            className="form-control edu_city"
-                                                            id=""
-                                                            onkeyup="generateCV()"
-                                                        />
+                                                        <select name='country' className="form-control" onChange={(e)=>handlecountry(e)}>
+                                                            <option value=""></option>
+                                                        {
+                                                            countrydata.map( (getcountry,index) => (
+                                                                <option value={getcountry.country_id} key={index}>{ getcountry.country_name}</option>
+                                                            ))
+                                                        }
+
+                                                    </select>
+
                                                         <span className="form-text" />
                                                     </div>
+
+                                                    
+
+
+
+                                                    <div className="form-elem">
+                                                        <label htmlFor="" className="form-label">
+                                                            City
+                                                        </label>
+                                                        <select name='city' className="form-control" onChange={(e) => handlestate(e)}>
+                                                            <option value=""></option>
+                                                        {
+                                                            state.map( (getstate,index) => (
+                                                                <option value={getstate.state_id} key={index}>{ getstate.state_name}</option>
+                                                            ))
+                                                        }
+
+                                                    </select>
+
+                                                        <span className="form-text" />
+                                                    </div>
+
+
+
+
+                                                    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
                                                 </div>
                                                 <div className="cols-3">
                                                     <div className="form-elem">
@@ -399,11 +463,10 @@ const WorkPage = () => {
                                         +
                                     </button>
                                 </div>
-                            </div>
+                            </div> 
 
                             
-
-
+                            {/* archivment */}
 
                             <div className="cv-form-blk">
                                 <div className="cv-form-row-title">
@@ -462,12 +525,11 @@ const WorkPage = () => {
                                         +
                                     </button>
                                 </div>
-                            </div>
+                            </div> 
 
                             
 
-
-
+                            {/* languge */}
 
                             <div className="cv-form-blk">
                                 <div className="cv-form-row-title">
@@ -524,13 +586,10 @@ const WorkPage = () => {
                                         +
                                     </button>
                                 </div>
-                            </div>
+                            </div> 
 
                             
-
-
-
-
+                            {/* skills */}
 
                             <div className="cv-form-blk">
                                 <div className="cv-form-row-title">
@@ -572,12 +631,11 @@ const WorkPage = () => {
                                         +
                                     </button>
                                 </div>
-                            </div>
+                            </div>  
 
                             
 
-
-
+                            {/* social media */}
                             <div className="cv-form-blk">
                                 <div className="cv-form-row-title">
                                     <h3>Social </h3>
@@ -618,7 +676,7 @@ const WorkPage = () => {
                                         +
                                     </button>
                                 </div>
-                            </div> */}
+                            </div> 
 
 
 

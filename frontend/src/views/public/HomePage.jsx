@@ -10,7 +10,6 @@ const HomePage = () => {
     return <>
         <div className="container-home">
             
-
             <header className="headline-h" id="headline-h">
                 
                 <div className="">
@@ -34,9 +33,6 @@ const HomePage = () => {
                     </div>
                 </div>
             </header>
-
-
-            
 
 
 
@@ -114,13 +110,9 @@ const HomePage = () => {
                     </div>
                 </div>
             </div>
-
-
-
         </div>
         <Footer />
     </>
-
 
 }
 

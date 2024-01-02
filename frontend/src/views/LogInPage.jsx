@@ -40,11 +40,11 @@ function LogInPage() {
     if (request.status === 200) {
 
       setUser(request.data);
-      navigate('/');
+      navigate('/admin/dashboard');
     }
 
 
-   
+  
   }
 
   return (
@@ -57,7 +57,7 @@ function LogInPage() {
           <form onSubmit={handleSubmit} >
             <div className="email">
 
-              <input type="text" placeholder="Email or Phone" name='email'
+              <input type="text" placeholder="Email" name='email'
                 onChange={handleInput} required="" />
               {errors.email && <span className='text-danger'> {errors.email}</span>}
             </div>

@@ -5,7 +5,7 @@ body {
 .container-foot {
     max-width: 2170px;
     margin: auto;
-    height: 34vh;
+    height: 20vh;
 }
 
 .width {
@@ -91,16 +91,28 @@ body {
     background-color: #ffffff;
 }
 
+
+
 /*responsive*/
-@media (max-width: 767px) {
-    .footer-col {
-        width: 50%;
-        margin-bottom: 30px;
-    }
+@media (max-width: 768px) {
+    .container-foot {
+            height: auto;
+        }
+    
+        .footer-col {
+            width: auto;
+            padding: 0px 25px;
+        }
 }
 
-@media (max-width: 574px) {
+
+@media (max-width: 500px) {
+.container-foot {
+        height: auto;
+    }
+
     .footer-col {
-        width: 100%;
+        width: auto;
+        padding: 10px 10px;
     }
 }

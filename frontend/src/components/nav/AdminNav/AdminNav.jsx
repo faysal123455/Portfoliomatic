@@ -1,31 +1,60 @@
 import "./AdminNav.css";
 import { Link } from "react-router-dom";
 
+import { useContext, useRef } from "react";
+import { faBars, faXmark, faUser, faRightFromBracket } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { UserContext } from "../../../contexts/UserContext";
+
+
 const AdminNav = () => {
+  const navRef = useRef();
+
+
+  const showNavbar = () => {
+    navRef.current.classList.toggle(
+      "responsive_nav"
+    );
+  };
+
   return (
-    <div className="topnav">
-      <Link to="/login" relative="path">
-        <a className="nav-items">LogOut</a>
-      </Link>
+    <header >
+      <Link to="/" relative="path"><h1 className="site_name">Portfoliomatic</h1></Link>
 
-      <Link to="/admin" relative="path">
-        <a className="nav-items">Admin</a>
-      </Link>
+      <nav ref={navRef}>
+      
+        <Link to="/admin" relative="path">
+          Admin
+        </Link>
+        <Link to="/admin/dashboard" relative="path"> <FontAwesomeIcon icon={faUser} className="user"> </FontAwesomeIcon>
+          Dashboard
+        </Link>
+        <Link to="/admin/experiences" relative="path">
+          Experiences
+        </Link>
+        <Link to="/admin/work" relative="path">
+          Works
+        </Link>
+        <Link to="/login" relative="path">  <FontAwesomeIcon icon={faRightFromBracket} className="out"> </FontAwesomeIcon>
 
-      <Link to="/admin/dashboard" relative="path">
-        <a className="nav-items">Dashboard</a>
-      </Link>
+        </Link>
 
-      <Link to="/admin/experiences" relative="path">
-        <a className="nav-items">Experiences</a>
-      </Link>
-      <Link to="/admin/work" relative="path">
-        <a className="nav-items">Works</a>
-      </Link>
+        <button
+          className="nav-btn nav-close-btn"
+          onClick={showNavbar}>
+          <FontAwesomeIcon icon={faXmark} />
+        </button>
+      </nav>
+      <button
+        className="nav-btn"
+        onClick={showNavbar}>
+        <FontAwesomeIcon icon={faBars} />
+      </button>
 
-    
-    </div>
+    </header>
+
+
   );
-};
+}
 
 export default AdminNav;

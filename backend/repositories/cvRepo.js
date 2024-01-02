@@ -17,7 +17,7 @@ const createOneCv = async (data) => {
     const sql = `
     INSERT INTO portfoliomatic.cv
     VALUES
-    (NULL, :photo, :user_id);`
+    (NULL, :nom, :prenom, :image, :user_id);`
 
     try {
         const [results] = await dbConnection.execute(sql, data);

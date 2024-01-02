@@ -102,19 +102,7 @@
     border-right-width: 0px;
     border-bottom-width: 0px;
     border-left-width: 0px;
-    border-top-style: outset;
-    border-right-style: outset;
-    border-bottom-style: outset;
-    border-left-style: outset;
-    border-top-color: rgb(244, 152, 146);
-    border-right-color: rgb(244, 152, 146);
-    border-bottom-color: rgb(244, 152, 146);
-    border-left-color: rgb(244, 152, 146);
-    border-image-source: initial;
-    border-image-slice: initial;
-    border-image-width: initial;
-    border-image-outset: initial;
-    border-image-repeat: initial;
+  
     cursor: pointer;
     box-shadow: rgba(244, 152, 146, 0.25) 0px 10px 20px;
     border-top-left-radius: 10px;
@@ -128,17 +116,7 @@
 }
 
 .explore:hover {
-    background-image: initial;
-    background-position-x: initial;
-    background-position-y: initial;
-    background-size: initial;
-    background-repeat-x: initial;
-    background-repeat-y: initial;
-    background-attachment: initial;
-    background-origin: initial;
-    background-clip: initial;
     background-color: rgb(255, 235, 234);
-    color: rgb(244, 152, 146);
 }
 
 .responsive-container-block.Container {
@@ -155,20 +133,8 @@
     padding-left: 10px;
 }
 
-.responsive-container-block.Container.bottomContainer {
-    flex-direction: row;
-    margin-top: 50px;
-    margin-right: auto;
-    margin-bottom: 50px;
-    margin-left: auto;
-}
 
-.allText.aboveText {
-    margin-top: 0px;
-    margin-right: 0px;
-    margin-bottom: 0px;
-    margin-left: 40px;
-}
+
 
 .allText.bottomText {
     margin-top: 0px;
@@ -491,13 +457,7 @@
         padding-left: 25px;
     }
 
-    .allText {
-        padding-top: 0px;
-        padding-right: 0px;
-        padding-bottom: 0px;
-        padding-left: 0px;
-        width: 100%;
-    }
+
 
     .responsive-container-block.bigContainer {
         padding-top: 10px;
@@ -539,3 +499,5 @@
         font-size: 24px;
     }
 }
+
+

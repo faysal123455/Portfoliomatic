@@ -19,7 +19,7 @@
 .container-login {
     max-width: 440px;
     padding: 0 20px;
-    margin: 69px auto 282px auto;
+    margin: 262px auto 282px auto;
 }
 
 .card {
@@ -49,6 +49,7 @@
     height: 45px;
     margin-bottom: 45px;
     position: relative;
+    margin-top: 47px;
 }
 
 .card form .email input {

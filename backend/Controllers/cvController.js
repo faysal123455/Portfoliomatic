@@ -1,5 +1,6 @@
 import dbConnection from '../service/dbconnection.js';
-
+import fs from 'node:fs/promises';
+import { getExtensionFromMimeType } from '../service/fileService.js';
 
 import { getCv, createOneCv } from "../repositories/cvRepo.js";
 
@@ -30,8 +31,17 @@ const cvById = async (req , res) => {
 };
 
 
-const createCv = (req, res) => {
+const createCv =  async (req, res) => {
+    const file = req.files.shift();
+    console.log(file)
+    const fullFileName = `${file.path}.${getExtensionFromMimeType(file.mimetype)}`;
+    const fileName = `${file.filename}.${getExtensionFromMimeType(file.mimetype)}`;
+
+    await fs.rename(file.path, fullFileName);
+
+    req.body = { ...req.body, image: fileName };
     console.log(req.body);
+
     createOneCv(req.body).then(data => {
         return res.status(200).json({
             status: 200,

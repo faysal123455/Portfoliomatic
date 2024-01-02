@@ -56,5 +56,27 @@ const createPersonalInformations = async (data) => {
 }
 
 
+export async function createCv(data) {
+
+    const URL = `${ apiURL }/cvs`;
+    try {
+        const requestInfos = new Request(URL, {
+            method: "POST",
+            body: data,
+        });
+
+        const req = await fetch(requestInfos);
+
+        if (!req.ok) {
+            throw new Error();
+        }
+
+        const res = await req.json();
+        return res;
+    } catch (error) {
+        throw new Error();
+    }
+}
+
 
 export { createUser, loginUser, createPersonalInformations }

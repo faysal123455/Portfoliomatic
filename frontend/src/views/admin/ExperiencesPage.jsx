@@ -2,308 +2,215 @@ import Footer from "../../components/footer/Footer";
 
 import "./ExperiencesPage.css";
 
-
 const ExperiencesPage = () => {
-
     return (
-
         <>
-
             <section className="real-cv">
-                
+                <div className="cv-container">
+                    <div className="left-column">
+                        <img
+                            className="portait"
+                            src="https://www.codeur.com/tuto/wp-content/uploads/2022/01/MG_0110-4-293x300.jpg"
+                        />
+                        <div className="section">
+                            <ul className="infos">
+                                <h2>contact</h2>
+                                <li>
+                                    <i className="icon fas fa-at text-blue" />{" "}
+                                    <a href="mailto:contact@pgomba.com">contact@pgomba.com</a>
+                                </li>
+                                <li>
+                                    <i className="icon fas fa-phone text-blue" /> contact@pgomba.com
+                                </li>
+                                <li>
+                                    <i className="icon fas fa-phone text-blue" /> 04 75 53 80 50
+                                </li>
+                                <li>
+                                    <i className="icon fas fa-phone text-blue" /> 04 75 53 80 50
+                                </li>
+                                <li>
+                                    <i className="icon fas fa-phone text-blue" /> 04 75 53 80 50
+                                </li>
+                                <li>
+                                    <i className="icon fas fa-phone text-blue" /> 04 75 53 80 50
+                                </li>
+                                <li>
+                                    <i className="icon fas fa-map-marker-alt text-blue" />{" "}
+                                    Boulevard de , 4020 Liège
+                                </li>
+                            </ul>
+                        </div>
+                        <div className="section">
+                            <h2>COMPÉTENCES</h2>
+                            <ul className="skills">
+                                
+                                <li>
+                                    <i className="icon fas fa-check-circle text-darkblue" /> PHP
+                                </li>
+                                <li>
+                                    <i className="icon fas fa-check-circle text-darkblue" /> Zend
+                                    Framework
+                                </li>
+                                <li>
+                                    <i className="icon fas fa-check-circle text-darkblue" /> Zend
+                                    Framework
+                                </li>
+                                <li>
+                                    <i className="icon fas fa-check-circle text-darkblue" /> Zend
+                                    Framework
+                                </li>
+                                <li>
+                                    <i className="icon fas fa-check-circle text-darkblue" /> Zend
+                                    Framework
+                                </li>
+                                <li>
+                                    <i className="icon fas fa-check-circle text-darkblue" /> MySQL
+                                </li>
+                                <li>
+                                    <i className="icon fas fa-check-circle text-darkblue" /> Git |
+                                    Github
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div className="section">
+                            <h2>Centres d'intérêt</h2>
+                            <p>
+                                Jeux vidéo, jouer et développer
+                                <br />
+                                Musique, écoute et composition
+                                <br />
+                                Art en général
+                                <br />
+                                Sport
+                                <br />
+                                Informatique en général
+                            </p>
+                        </div>
+                        <div className="section">
+                            <h2>Langues</h2>
+                            <p>
+                                Français, langue maternelle
+                                <br />
+                                Anglais, compétence professionnelle
+                            </p>
+                        </div>
+                    </div>
 
 
-                <div className="container-fluid overcover">
-                    <div className="container profile-box">
-                        <div className="row">
-                            <div className="col-md-4 left-co">
-                                <div className="left-side">
-                                    <div className="profile-info">
-                                        <img src="assets/images/profile.jpg" alt="" />
-                                        <h3>Jonney Anderson</h3>
-                                        <span>Web Designer</span>
-                                    </div>
-                                    <h4 className="ltitle">Contact</h4>
-                                    <div className="contact-box pb0">
-                                        <div className="icon">
-                                            <i className="fas fa-phone" />
-                                        </div>
-                                        <div className="detail">
-                                            +123 8767 5465 <br />
-                                            +122 2345 3763
-                                        </div>
-                                    </div>
-                                    <div className="contact-box pb0">
-                                        <div className="icon">
-                                            <i className="fas fa-globe-americas" />
-                                        </div>
-                                        <div className="detail">
-                                            info@smarteyeapps.com <br />
-                                            www.smarteyeapps.com
-                                        </div>
-                                    </div>
-                                    <div className="contact-box">
-                                        <div className="icon">
-                                            <i className="fas fa-map-marker-alt" />
-                                        </div>
-                                        <div className="detail">
-                                            First Floor,Vincent Plaza, Toranto, Canada
-                                        </div>
-                                    </div>
-                                    <h4 className="ltitle">Contact</h4>
-                                    <ul className="row social-link no-margin">
-                                        <li>
-                                            <i className="fab fa-facebook-f" />
-                                        </li>
-                                        <li>
-                                            <i className="fab fa-twitter" />
-                                        </li>
-                                        <li>
-                                            <i className="fab fa-google-plus-g" />
-                                        </li>
-                                        <li>
-                                            <i className="fab fa-linkedin-in" />
-                                        </li>
-                                        <li>
-                                            <i className="fab fa-github" />
-                                        </li>
-                                    </ul>
-                                    <h4 className="ltitle">Referencess</h4>
-                                    <div className="refer-cov">
-                                        <b>Jonney Smith</b>
-                                        <p>CEO Casinocarol</p>
-                                        <span>p +00 890 1232 8767</span>
-                                    </div>
-                                    <div className="refer-cov">
-                                        <b>Jonney Smith</b>
-                                        <p>System Administrator</p>
-                                        <span>p +00 890 1232 8767</span>
-                                    </div>
-                                    <h4 className="ltitle">Hobbies</h4>
-                                    <ul className="hoby row no-margin">
-                                        <li>
-                                            <i className="fas fa-pencil-alt" /> <br /> Writing
-                                        </li>
-                                        <li>
-                                            <i className="fas fa-bicycle" /> <br /> Cycling
-                                        </li>
-                                        <li>
-                                            <i className="fas fa-futbol" /> <br /> Football
-                                        </li>
-                                        <li>
-                                            <i className="fas fa-film" />
-                                            <br /> Movies
-                                        </li>
-                                        <li>
-                                            <i className="fas fa-plane-departure" /> <br />
-                                            Travel
-                                        </li>
-                                        <li>
-                                            <i className="fas fa-gamepad" /> <br /> Games
-                                        </li>
-                                    </ul>
-                                </div>
+
+
+
+                    <div className="right-column">
+                        <div className="header">
+                            <div className="wave">
+                            <h1 className="nom">Pierre Gomba</h1>
+                            <p>Freelance Front-end Developer</p>
+
+                            <p className="summary">
+                                Le <strong>Front-end</strong> est une de mes passions : j’aime
+                                intégrer ou imaginer des interfaces modernes, les rendre
+                                responsive et les dynamiser avec des animations élégantes. Mes
+                                deux technos de coeur sont <strong>Angular</strong> et{" "}
+                                <strong>Bootstrap</strong>, que j’utilise depuis plus de 6 ans.
+                                Je suis aussi Fullstack : PHP, MySQL, Doctrine…
+                                </p>
                             </div>
-                            <div className="col-md-8 rt-div">
-                                <div className="rit-cover">
-                                    <div className="hotkey">
-                                        <h1 className="">Jonney Anderson </h1>
-                                        <small>Web Designer</small>
-                                    </div>
-                                    <h2 className="rit-titl">
-                                        <i className="far fa-user" /> Profile
-                                    </h2>
-                                    <div className="about">
-                                        <p>
-                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis
-                                            accumsan purus enim, a vestibulum est tristique sit amet.
-                                            Suspendisse nibh nisl, imperdiet sit amet mi vitae, elementum
-                                            elementum nibh. Vivamus vitae eros malesuada, convallis dolor
-                                            malesuada, lobortis ex. Sed cursus augue risus, ac semper est
-                                            consectetur vitae. Praesent consequat metus sit amet rhoncus
-                                            luctus.
-                                        </p>
-                                        <div className="btn-ro row no-margin">
-                                            <ul className="btn-link">
-                                                <li>
-                                                    <a href="">
-                                                        <i className="fas fa-paper-plane" /> Hire Me
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a href="">
-                                                        <i className="fas fa-cloud-download-alt" /> Download Resume
-                                                    </a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <h2 className="rit-titl">
-                                        <i className="fas fa-briefcase" /> Work Experiance
-                                    </h2>
-                                    <div className="work-exp">
-                                        <h6>
-                                            Junior Software Developer <span>2008-2011</span>
-                                        </h6>
-                                        <i>Microsoft / United States</i>
-                                        <ul>
-                                            <li>
-                                                <i className="far fa-hand-point-right" /> Lorem ipsum dolor sit
-                                                amet, consectetur adipiscing elit.{" "}
-                                            </li>
-                                            <li>
-                                                <i className="far fa-hand-point-right" /> Sorem dolor sit amet,
-                                                consectetur.{" "}
-                                            </li>
-                                            <li>
-                                                <i className="far fa-hand-point-right" /> Porem ipsum sit amet,
-                                                consectetur adipiscing{" "}
-                                            </li>
-                                        </ul>
-                                    </div>
-                                    <div className="work-exp">
-                                        <h6>
-                                            Junior Software Developer <span>2008-2011</span>
-                                        </h6>
-                                        <i>Microsoft / United States</i>
-                                        <ul>
-                                            <li>
-                                                <i className="far fa-hand-point-right" /> Lorem ipsum dolor sit
-                                                amet, consectetur adipiscing elit.{" "}
-                                            </li>
-                                            <li>
-                                                <i className="far fa-hand-point-right" /> Sed cursus augue
-                                                risus, ac semper est consectetur vitae{" "}
-                                            </li>
-                                        </ul>
-                                    </div>
-                                    <div className="work-exp">
-                                        <h6>
-                                            Junior Software Developer <span>2008-2011</span>
-                                        </h6>
-                                        <i>Microsoft / United States</i>
-                                        <ul>
-                                            <li>
-                                                <i className="far fa-hand-point-right" /> Praesent consequat
-                                                metus sit amet rhoncus luctus.
-                                            </li>
-                                            <li>
-                                                <i className="far fa-hand-point-right" /> Lorem ipsum dolor sit
-                                                amet, consectetur.{" "}
-                                            </li>
-                                        </ul>
-                                    </div>
-                                    <h2 className="rit-titl">
-                                        <i className="fas fa-graduation-cap" /> Education
-                                    </h2>
-                                    <div className="education">
-                                        <ul className="row no-margin">
-                                            <li className="col-md-6">
-                                                <span>2013-2015</span> <br />
-                                                Master Degree - Cambridg University
-                                            </li>
-                                            <li className="col-md-6">
-                                                <span>2013-2015</span> <br />
-                                                Master Degree - Cambridg University
-                                            </li>
-                                            <li className="col-md-6">
-                                                <span>2013-2015</span> <br />
-                                                Master Degree - Cambridg University
-                                            </li>
-                                            <li className="col-md-6">
-                                                <span>2013-2015</span> <br />
-                                                Master Degree - Cambridg University
-                                            </li>
-                                        </ul>
-                                    </div>
-                                    <h2 className="rit-titl">
-                                        <i className="fas fa-users-cog" /> Skills
-                                    </h2>
-                                    <div className="profess-cover row no-margin">
-                                        <div className="col-md-6">
-                                            <div className=" prog-row row">
-                                                <div className="col-sm-6">Photoshop</div>
-                                                <div className="col-sm-6">
-                                                    <div className="progress">
-                                                        <div
-                                                            className="progress-bar"
-                                                            role="progressbar"
-                                                            style={{ width: "65%" }}
-                                                            aria-valuenow={25}
-                                                            aria-valuemin={0}
-                                                            aria-valuemax={100}
-                                                        />
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div className="col-md-6">
-                                            <div className="row prog-row">
-                                                <div className="col-sm-6">PHP</div>
-                                                <div className="col-sm-6">
-                                                    <div className="progress">
-                                                        <div
-                                                            className="progress-bar"
-                                                            role="progressbar"
-                                                            style={{ width: "85%" }}
-                                                            aria-valuenow={25}
-                                                            aria-valuemin={0}
-                                                            aria-valuemax={100}
-                                                        />
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div className="col-md-6">
-                                            <div className="row prog-row">
-                                                <div className="col-sm-6">Web Design</div>
-                                                <div className="col-sm-6">
-                                                    <div className="progress">
-                                                        <div
-                                                            className="progress-bar"
-                                                            role="progressbar"
-                                                            style={{ width: "75%" }}
-                                                            aria-valuenow={25}
-                                                            aria-valuemin={0}
-                                                            aria-valuemax={100}
-                                                        />
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div className="col-md-6">
-                                            <div className="row prog-row">
-                                                <div className="col-sm-6">Web Development</div>
-                                                <div className="col-sm-6">
-                                                    <div className="progress">
-                                                        <div
-                                                            className="progress-bar"
-                                                            role="progressbar"
-                                                            style={{ width: "55%" }}
-                                                            aria-valuenow={25}
-                                                            aria-valuemin={0}
-                                                            aria-valuemax={100}
-                                                        />
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+                        </div>
+
+                        <div className="content">
+                            <div className="section">
+                                <h2>
+                                    <span className="text-blue">professionelles</span>
+                                </h2>
+                                <p>
+                                    <strong>
+                                        2015 <i className="fas fa-long-arrow-alt-right" /> 2021
+                                    </strong>
+                                    <br />
+                                    Fullstack Developer à temps plein chez <em>Webadev SPRL</em>
+                                </p>
+                                <ul className="experience-list">
+                                    <li>
+                                        Réalisations de sites web, d’e-shops, d’interfaces et
+                                        d’applications web sous Angular et Bootstrap
+                                    </li>
+                                    <li>
+                                        Intégration de templates Photoshop, Illustrator, Sketch,
+                                        Figma
+                                    </li>
+                                    <li>Projets sous npm et Webpack</li>
+                                    <li>
+                                        Collaboration avec d’autres studios graphique (Studio Debie,
+                                        SOL,…)
+                                    </li>
+                                    <li>Optimisation des performances</li>
+                                    <li>
+                                        Développement de templates et de modules réutilisables
+                                    </li>
+                                    <li>
+                                        Projets en équipe, utilisation quotidienne de SVN, Git et
+                                        Github
+                                    </li>
+                                </ul>
+                            </div>
+                            <div className="section">
+                                <p>
+                                    <strong>2021</strong>
+                                    <br />
+                                    Freelance en activité
+                                </p>
+                                <ul className="experience-list">
+                                    <li>Freelance Front-end Developer</li>
+                                    <li>Unity Developer / Sound Designer</li>
+                                </ul>
+                            </div>
+                            <div className="section">
+                                <h2>
+                                    <span className="text-blue">&amp; formations</span>
+                                </h2>
+                                <p>
+                                    <strong>
+                                        2015 <i className="fas fa-long-arrow-alt-right" /> 2019
+                                    </strong>
+                                    <br />
+                                    <em>Bachelier en Informatique de Gestion</em>, Diplômé,
+                                    Institut Saint Laurent
+                                </p>
+                                <p>
+                                    <strong>2015</strong>
+                                    <br />
+                                    <em>STE-Formations Informatiques</em>, Formation qualifiante
+                                    de Web Developer
+                                </p>
+                                <p>
+                                    <strong>
+                                        2013 <i className="fas fa-long-arrow-alt-right" /> 2014
+                                    </strong>
+                                    <br />
+                                    <em>Bachelier en Sciences humaines</em>, Haute École de Liège
+                                </p>
+                            </div>
+                            <div className="section">
+                                <h2>
+                                    <span className="text-blue">archivments</span>
+                                </h2>
+                                <p>
+                                    Permis B, possession d’une voiture
+                                    <br />
+                                    Animateur Scout pendant 6 ans
+                                    <br />
+                                    Brevet d’animateur de Centre de Vacances
+                                </p>
                             </div>
                         </div>
                     </div>
                 </div>
-
-
-
-</section>
-
+            </section>
 
             <Footer />
         </>
-    )
-
-}
+    );
+};
 
 export default ExperiencesPage;

@@ -3,7 +3,6 @@ import PublicNav from "../components/nav/PublicNav/PublicNav";
 const RootLayout = () => {
     return (
         <>
-
             <PublicNav />
             <Outlet />
         </>

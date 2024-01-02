@@ -38,32 +38,35 @@ VALUES
 
 CREATE TABLE portfoliomatic.cv(
     id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+    nom VARCHAR(50) NOT NULL,
+    prenom VARCHAR(50) NOT NULL,
+    image VARCHAR(100),
     user_id INT UNSIGNED NOT NULL,
     FOREIGN KEY(user_id) REFERENCES portfoliomatic.user(id)
 );
 
 INSERT INTO portfoliomatic.cv
 VALUES
-    (NULL, 1),
-    (NULL, 2),
-    (NULL, 3),
-    (NULL, 4),
-    (NULL, 5),
-    (NULL, 6),
-    (NULL, 7),
-    (NULL, 8),
-    (NULL, 9),
-    (NULL, 10),
-    (NULL, 11),
-    (NULL, 12),
-    (NULL, 13),
-    (NULL, 14),
-    (NULL, 15),
-    (NULL, 16),
-    (NULL, 17),
-    (NULL, 18),
-    (NULL, 19),
-    (NULL, 20);
+    (NULL, 'fofo2', 'fofo','fofo.jpg', 1),
+    (NULL, 'fofo2', 'fofo','fofo.jpg', 2),
+    (NULL, 'fofo2', 'fofo','fofo.jpg', 3),
+    (NULL, 'fofo2', 'fofo','fofo.jpg', 4),
+    (NULL, 'fofo2', 'fofo','fofo.jpg', 5),
+    (NULL, 'fofo2', 'fofo','fofo.jpg', 6),
+    (NULL, 'fofo2', 'fofo','fofo.jpg', 7),
+    (NULL, 'fofo2', 'fofo','fofo.jpg', 8),
+    (NULL, 'fofo2', 'fofo','fofo.jpg', 9),
+    (NULL, 'fofo2', 'fofo','fofo.jpg', 10),
+    (NULL, 'fofo2', 'fofo','fofo.jpg', 11),
+    (NULL, 'fofo2', 'fofo','fofo.jpg', 12),
+    (NULL, 'fofo2', 'fofo','fofo.jpg', 13),
+    (NULL, 'fofo2', 'fofo','fofo.jpg', 14),
+    (NULL, 'fofo2', 'fofo','fofo.jpg', 15),
+    (NULL, 'fofo2', 'fofo','fofo.jpg', 16),
+    (NULL, 'fofo2', 'fofo','fofo.jpg', 17),
+    (NULL, 'fofo2', 'fofo','fofo.jpg', 18),
+    (NULL, 'fofo2', 'fofo','fofo.jpg', 19),
+    (NULL, 'fofo2', 'fofo','fofo.jpg', 20);
 
     
 
