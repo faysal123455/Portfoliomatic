@@ -306,5 +306,18 @@ VALUES
     (NULL, 'Uber Technologies, Inc.', '14-01-23', '01-01-2024', 'Driver Partner', 6, 8),
     (NULL, 'General Electric', '14-01-23', '01-01-2024', 'Mechanical Engineer', 7, 4),
     (NULL, 'Procter & Gamble', '14-01-23', '01-01-2024', 'Product Manager', 8, 6),
-    (NULL, 'Cisco Systems', '14-01-23', '01-01-2024', 'Network Engineer', 9, 10),(NULL, 'Verizon Communications', '14-01-23', '01-01-2024', 'Customer Service Representative', 10, 1);
+    (NULL, 'Cisco Systems', '14-01-23', '01-01-2024', 'Network Engineer', 9, 10),
+    (NULL, 'Verizon Communications', '14-01-23', '01-01-2024', 'Customer Service Representative', 10, 1);
 
+
+CREATE TABLE portfoliomatic.getbill (
+    id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(50) NOT NULL,
+    email VARCHAR(50) NOT NULL,
+    message VARCHAR(255) NOT NULL
+);
+
+INSERT INTO portfoliomatic.getbill
+VALUES
+    (NULL, 'John Doe', 'john.doe@example.com', 'This is a message with exactly 255 characters. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec at mauris eu odio placerat facilisis. Duis vel malesuada purus. Sed id augue eu est tempor pharetra.'
+    );

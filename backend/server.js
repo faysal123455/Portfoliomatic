@@ -13,6 +13,7 @@ import usersRouter from './routes/user.js';
 import cvsRouter from './routes/cv.js';
 import summarysRouter from './routes/summary.js';
 import languagesRouter from './routes/language.js';
+import getbillsRouter from './routes/nodemail.js';
 import archivmentsRouter from './routes/archivment.js';
 import skillsRouter from './routes/skill.js';
 import educationsRouter from './routes/education.js';
@@ -33,11 +34,13 @@ router.use('/api/users', usersRouter);
 router.use('/api/cvs', cvsRouter);
 router.use('/api/summarys', summarysRouter);
 router.use('/api/languages', languagesRouter);
+router.use('/api/getbills', getbillsRouter);
 router.use('/api/archivments', archivmentsRouter);
 router.use('/api/skills', skillsRouter);
 router.use('/api/educations', educationsRouter);
 router.use('/api/works', worksRouter);
 router.use('/api/personalinfos', personalInfosRouter);
+
 
 app.use(router);
 
