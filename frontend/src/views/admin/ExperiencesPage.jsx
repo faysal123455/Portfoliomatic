@@ -43,7 +43,7 @@ const ExperiencesPage = () => {
                         <div className="section">
                             <h2>COMPÉTENCES</h2>
                             <ul className="skills">
-                                
+
                                 <li>
                                     <i className="icon fas fa-check-circle text-darkblue" /> PHP
                                 </li>
@@ -104,16 +104,16 @@ const ExperiencesPage = () => {
                     <div className="right-column">
                         <div className="header">
                             <div className="wave">
-                            <h1 className="nom">Pierre Gomba</h1>
-                            <p>Freelance Front-end Developer</p>
+                                <h1 className="nom">Pierre Gomba</h1>
+                                <p>Freelance Front-end Developer</p>
 
-                            <p className="summary">
-                                Le <strong>Front-end</strong> est une de mes passions : j’aime
-                                intégrer ou imaginer des interfaces modernes, les rendre
-                                responsive et les dynamiser avec des animations élégantes. Mes
-                                deux technos de coeur sont <strong>Angular</strong> et{" "}
-                                <strong>Bootstrap</strong>, que j’utilise depuis plus de 6 ans.
-                                Je suis aussi Fullstack : PHP, MySQL, Doctrine…
+                                <p className="summary">
+                                    Le <strong>Front-end</strong> est une de mes passions : j’aime
+                                    intégrer ou imaginer des interfaces modernes, les rendre
+                                    responsive et les dynamiser avec des animations élégantes. Mes
+                                    deux technos de coeur sont <strong>Angular</strong> et{" "}
+                                    <strong>Bootstrap</strong>, que j’utilise depuis plus de 6 ans.
+                                    Je suis aussi Fullstack : PHP, MySQL, Doctrine…
                                 </p>
                             </div>
                         </div>

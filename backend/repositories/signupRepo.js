@@ -17,7 +17,7 @@ const createOneSignup = async (data) => {
     const sql = `
     INSERT INTO portfoliomatic.signup
     VALUES
-    (NULL, 'faysal','faysal.sarker@pernod-ricard.com','Ricard00_');`
+    (NULL, 'faysal','faysaltaysal@pernod-ricard.com','Rikoo12345');`
 
 
     try {

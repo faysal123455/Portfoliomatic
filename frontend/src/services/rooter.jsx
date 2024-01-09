@@ -15,6 +15,7 @@ import AdminLayout from "../layout/AdminLayout";
 import DashboardPage from "../views/admin/DashboardPage"
 import ExperiencesPage from "../views/admin/ExperiencesPage"
 import WorkPage from "../views/admin/WorkPage"
+import AdminPage from "../views/admin/AdminPage"
 // ==============================================>
 
 
@@ -44,6 +45,7 @@ const rooter = createBrowserRouter([
       { path: "/admin/dashboard", element: <DashboardPage /> },
       { path: "/admin/experiences", element: <ExperiencesPage />},
       { path: "/admin/work", element: <WorkPage />},
+      { path: "/admin/test/:createdCvId", element: <AdminPage />},
     ]
     // ==================================================================>
   },

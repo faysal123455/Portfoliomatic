@@ -32,10 +32,10 @@ const Footer = () => {
                     <div className="footer-col">
                         <h4 className="headline">follow us</h4>
                         <div className="social-links">
-                            <a href="#"><FontAwesomeIcon icon={faFacebookF}></FontAwesomeIcon></a>
-                            <a href="#"><FontAwesomeIcon icon={faLinkedinIn}></FontAwesomeIcon></a>
-                            <a href="#"><FontAwesomeIcon icon={faTwitter}></FontAwesomeIcon></a>
-                            <a href="#"><FontAwesomeIcon icon={faInstagram}></FontAwesomeIcon></a>
+                            <a href="https://www.facebook.com/"><FontAwesomeIcon icon={faFacebookF}></FontAwesomeIcon></a>
+                            <a href="https://www.linkedin.com/"><FontAwesomeIcon icon={faLinkedinIn}></FontAwesomeIcon></a>
+                            <a href="https://twitter.com/"><FontAwesomeIcon icon={faTwitter}></FontAwesomeIcon></a>
+                            <a href="https://www.instagram.com/"><FontAwesomeIcon icon={faInstagram}></FontAwesomeIcon></a>
                         </div>
                     </div>
                 </div>

@@ -23,7 +23,7 @@ const AdminNav = () => {
 
       <nav ref={navRef}>
       
-        <Link to="/admin" relative="path">
+        <Link to="/admin/test" relative="path">
           Admin
         </Link>
         <Link to="/admin/dashboard" relative="path"> <FontAwesomeIcon icon={faUser} className="user"> </FontAwesomeIcon>

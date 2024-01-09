@@ -38,10 +38,7 @@ const loginUser = async (data) => {
 
 
     return response;
-
-
 }
-
 
 
 const createPersonalInformations = async (data) => {
@@ -72,7 +69,9 @@ export async function createCv(data) {
         }
 
         const res = await req.json();
+        console.log(res)
         return res;
+        
     } catch (error) {
         throw new Error();
     }

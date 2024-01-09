@@ -4,28 +4,36 @@ import "./DashboardPage.css"
 import { useContext, useEffect, useState } from "react";
 import { UserContext } from "../../contexts/UserContext.jsx";
 import { createCv } from "../../services/api";
+import { useNavigate } from "react-router-dom";
 
 const DashboardPage = () => {
     const { user, setUser } = useContext(UserContext);
-    const [createdCvId, setCreatedCvId] = useState(null)
-    const handleSubmit = async(e) => {
+    console.log(user)
+    const [createdCvId, setCreatedCvId] = useState(null);
+
+    const navigate = useNavigate();
+    const handleSubmit = async (e) => {
         e.preventDefault();
         const formData = new FormData(e.target);
         formData.append("user_id", user.id);
-        
-        
+
+
         try {
             const response = await createCv(formData);
+
+
             console.log(response)
             // Supposons que la réponse contienne un champ 'cvId'
-            const cvId = response.data.insertId;
-            setCreatedCvId(cvId);
-            console.log("CV créé avec l'ID:", cvId);
+            const data = response.data;
+
+            setCreatedCvId(data.insertId);
+
+            console.log("CV créé avec l'ID:", data.insertId);
         } catch (error) {
             console.error("Erreur lors de la création du CV:", error);
         }
 
-        
+
 
         // console.log(formData);
 
@@ -34,11 +42,12 @@ const DashboardPage = () => {
     useEffect(() => {
         console.log(createdCvId);
         // Perform any additional actions here after createdCvId is updated
-    }, [createdCvId]);
-   console.log(createdCvId)
-    // console.log(user);
-    
 
+    }, [createdCvId]);
+    console.log(createdCvId)
+    // console.log(user);
+    navigate(`/admin/test/${createdCvId}`);
+    // navigate('/admin/test/${createdCvId}')
     // email:"cat@gmail.com"
     // firstname:"cat"
     // id
@@ -52,7 +61,7 @@ const DashboardPage = () => {
                 <div className="container">
                     <div className="about-cnt">
                         <form onSubmit={handleSubmit} className="cv-form" id="cv-form" encType="multipart/form-data">
-                            
+
                             {/* personal information */}
 
                             <div className="cv-form-blk">
@@ -166,16 +175,17 @@ const DashboardPage = () => {
                                 </div>
                             </div>
 
-                            
+
                             <input type="submit" />
+
 
                         </form>
                     </div>
                 </div>
-                </section>
+            </section>
         </>
     )
-    
+
 }
 
 export default DashboardPage;

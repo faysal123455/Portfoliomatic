@@ -4,7 +4,7 @@ import "./AboutPage.css";
 
 const AboutPage = () => {
     return (
-<div className="container-about">
+        <div className="container-about">
 
             <div className="responsive-container-block bigContainer">
                 <div className="responsive-container-block Container bottomContainer">
@@ -18,23 +18,18 @@ const AboutPage = () => {
                             tincidunt ut dolor eu. Mi, eget posuere vitae sed purus nisl lorem.
                         </p>
                         <a>
-                            <button className="explore">View More</button>
+                            <button className="explore">lets start</button>
                         </a>
                     </div>
                     <div className="videoContainer">
-                        <iframe allowFullScreen="allowFullScreen" className="mainVideo" controls="controls" src="https://www.youtube.com/embed/svg%3E?">
-                        </iframe>
-                        <img
-                            className="dotsImg image-block"
-                            src="https://workik-widget-assets.s3.amazonaws.com/widget-assets/images/cw3.svg"
-                        />
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/UMOe0glzPmU?si=JR3EXdMEUoH8IxRD&amp;start=5" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
                     </div>
                 </div>
             </div>
 
-<Footer />
-</div>
-    
+            <Footer />
+        </div>
+
 
     );
 };

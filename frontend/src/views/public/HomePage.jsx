@@ -1,5 +1,7 @@
 import Footer from "../../components/footer/Footer";
 import "./HomePage.css";
+import { Link } from "react-router-dom";
+
 
 import logo from '../../assets/visual-0c7080adf17f1f207276f613447c924f667dab34b7ac415cd7ef653172defd0b.svg';
 import one from '../../assets/feature-1-edf4481d69166ac81917d1e40e6597c8d61aa970ad44367ce78049bf830fbda5.svg';
@@ -25,10 +27,9 @@ const HomePage = () => {
                             resume rules employers look for. Easy to use and done within minutes
                             - try now for free!
                         </p>
-
-                        <a href="resume.html" className="btn btn-primary text-uppercase">
-                            create my resume
-                        </a>
+                        <Link to="/login" className="btn btn-primary text-uppercase">
+                            Create My Resume
+                        </Link>
 
                     </div>
                 </div>
