@@ -41,7 +41,7 @@ function SignUp() {
     return (
         <div className="container-log">
             <div className="container-login">
-                <div className="title">
+                <div className="title_login">
                     <span>Signup Form</span>
                 </div>
                 <div className="card">

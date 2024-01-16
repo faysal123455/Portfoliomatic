@@ -7,8 +7,8 @@ export default function MyContact() {
     const [subject, setSubject] = useState("");
     const [message, setMessage] = useState("");
 
-const baseUrl = "http://localhost:3000"; 
-    
+    const baseUrl = "http://localhost:3000/getbills";
+
     const sendEmail = async () => {
         let dataSend = {
             email: email,
@@ -16,7 +16,7 @@ const baseUrl = "http://localhost:3000";
             message: message,
         };
 
-        const res = await fetch(`${baseUrl}/email/sendEmail`, {
+        const res = await fetch(`${baseUrl}/getbills/email/sendEmail`, {
             method: "POST",
             body: JSON.stringify(dataSend),
             headers: {
@@ -24,7 +24,6 @@ const baseUrl = "http://localhost:3000";
                 "Content-Type": "application/json",
             },
         })
-            // HANDLING ERRORS
             .then((res) => {
                 console.log(res);
                 if (res.status > 199 && res.status < 300) {
@@ -37,7 +36,7 @@ const baseUrl = "http://localhost:3000";
     return (
         <div className="container_contact">
             <section className="contact">
-                
+
                 <form onSubmit={sendEmail} className="form-contact">
                     {/* Input fields and button */}
                     {/* <input type="email" placeholder="Email" id="email" autoComplete="off" onChange={(e) => setEmail(e.target.value)} />
@@ -48,7 +47,7 @@ const baseUrl = "http://localhost:3000";
                     
                     <button onClick={() => sendEmail()} id="btn">Send Email
                     </button> */}
-                    
+
                 </form>
 
                 <section className="contact">
@@ -74,7 +73,7 @@ const baseUrl = "http://localhost:3000";
                                 />
                             </div>
                             <div className="form-item">
-                                <input type="submit" defaultValue="Submit" id="submit" />
+                                <button type="submit" className="send-button">Send contact</button>
                             </div>
                         </form>
                     </div>

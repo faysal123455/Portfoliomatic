@@ -1,7 +1,25 @@
 import "./Achievement.css"
 
 
-const Archivment = () => {
+const Achievement = () => {
+
+    const [achievementSections, setAchievementSections] = useState([{ id: 1 }]);
+
+
+
+    const addAchievementSection = () => {
+        const newSection = { id: achievementSections.length + 1 };
+        setAchievementSections([...achievementSections, newSection]);
+    };
+    const removeAchievementSection = (id) => {
+        const updatedSections = achievementSections.filter((section) => section.id !== id);
+        setAchievementSections(updatedSections);
+    };
+
+
+
+
+
 
 
 
@@ -13,83 +31,84 @@ const Archivment = () => {
         createCv(formData);
 
 
-
         console.log(formData);
-}
-
-
-
+    }
 
     return (
         <>
-            <section id="about-sc">
-                <div className="container">
-                    <div className="about-cnt">
-                        <form onSubmit={handleSubmit} className="cv-form" id="cv-form">
-
-
-                            <div className="cv-form-blk">
-                                <div className="cv-form-row-title">
-                                    <h3>achievements</h3>
-                                </div>
-                                <div className="row-separator repeater">
-                                    <div className="repeater" data-repeater-list="group-a">
-                                        <div data-repeater-item="">
-                                            <div className="cv-form-row cv-form-row-achievement">
-                                                <div className="cols-2">
-                                                    <div className="form-elem">
-                                                        <label htmlFor="" className="form-label">
-                                                            Title
-                                                        </label>
-                                                        <input
-                                                            name="name"
-                                                            type="text"
-                                                            className="form-control achieve_title"
-                                                            id=""
-                                                            onkeyup="generateCV()"
-                                                            placeholder="Excellence in Leadership Award"
-                                                        />
-                                                        <span className="form-text" />
-                                                    </div>
-                                                    <div className="form-elem">
-                                                        <label htmlFor="" className="form-label">
-                                                            Description
-                                                        </label>
-                                                        <input
-                                                            name="recognitation"
-                                                            type="text"
-                                                            className="form-control achieve_description"
-                                                            id=""
-                                                            onkeyup="generateCV()"
-                                                            placeholder="Employee of the Month"
-                                                        />
-                                                        <span className="form-text" />
-                                                    </div>
-                                                </div>
-                                                <button
-                                                    data-repeater-delete=""
-                                                    type="button"
-                                                    className="repeater-remove-btn"
-                                                >
-                                                    -
-                                                </button>
-                                            </div>
+            <div className="cv-form-blk">
+                <div className="cv-form-row-title">
+                    <h3>achievement</h3>
+                </div>
+                <form>
+                    {achievementSections.map((section) => (
+                        <div className="repeater" data-repeater-list="group-d" key={section.id}>
+                            <div data-repeater-item="">
+                                <div className="cv-form-row cv-form-row-achievement">
+                                    <div className="cols-2">
+                                        <div className="form-elem">
+                                            <label htmlFor="" className="form-label">
+                                                Name
+                                            </label>
+                                            <input
+                                                name="achieve_title"
+                                                type="text"
+                                                className="form-control achieve_title"
+                                                id=""
+                                                placeholder="e.g. johndoe@gmail.com"
+                                            />
+                                            <span className="form-text" />
                                         </div>
+                                        <div className="form-elem">
+                                            <label htmlFor="" className="form-label">
+                                                Recoginition
+                                            </label>
+                                            <input
+                                                name="achieve_description"
+                                                type="text"
+                                                className="form-control achieve_description"
+                                                id=""
+                                                placeholder="e.g. johndoe@gmail.com"
+                                            />
+                                            <span className="form-text" />
+                                        </div>
+                                        <button
+                                            data-repeater-delete=""
+                                            type="button"
+                                            className="repeater-remove-btn"
+                                            onClick={() => removeAchievementSection(section.id)}
+                                        >
+                                            -
+                                        </button>
+
+
+
+
                                     </div>
                                 </div>
-
                             </div>
+                        </div>
 
+                    ))}
+                    <button
+                        type="button"
+                        data-repeater-create=""
+                        value="Add"
+                        className="repeater-add-btn"
+                        onClick={addAchievementSection}
+                    >
+                        +
+                    </button>
 
-                            <input type="submit" />
+                    <div className="form-item">
+                        <button type="submit" className="send-button">Send</button>
 
-                        </form>
                     </div>
-                </div>
-            </section>
+                </form>
+            </div>
         </>
     )
 
 }
 
-export default Archivment;
+export default Achievement;

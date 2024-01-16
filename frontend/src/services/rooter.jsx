@@ -13,9 +13,11 @@ import CvTemplatesPage from "../views/public/CvTemplates";
 // Import des pages nécessaire concernant ma partie Admin
 import AdminLayout from "../layout/AdminLayout";
 import DashboardPage from "../views/admin/DashboardPage"
+import InformationPage from "../views/admin/InformationPage"
 import ExperiencesPage from "../views/admin/ExperiencesPage"
 import WorkPage from "../views/admin/WorkPage"
 import AdminPage from "../views/admin/AdminPage"
+import EditPage from "../views/admin/EditPage"
 // ==============================================>
 
 
@@ -29,11 +31,11 @@ const rooter = createBrowserRouter([
     element: <PublicLayout />,
     children: [
       { path: "/", element: <HomePage /> },
-      { path: "/about", element: <AboutPage />},
-      { path: "/contact", element: <ContactPage />},
-      { path: "/cvtemplates", element: <CvTemplatesPage />},
-      { path: "/login", element: <LogInPage />},
-      { path: "/signup", element: <SignUp />},
+      { path: "/about", element: <AboutPage /> },
+      { path: "/contact", element: <ContactPage /> },
+      { path: "/cvtemplates", element: <CvTemplatesPage /> },
+      { path: "/login", element: <LogInPage /> },
+      { path: "/signup", element: <SignUp /> },
     ]
     // ==========================================================>
   },
@@ -42,14 +44,16 @@ const rooter = createBrowserRouter([
     path: "/admin",
     element: <AdminLayout />,
     children: [
-      { path: "/admin/dashboard", element: <DashboardPage /> },
-      { path: "/admin/experiences", element: <ExperiencesPage />},
-      { path: "/admin/work", element: <WorkPage />},
-      { path: "/admin/test/:createdCvId", element: <AdminPage />},
+      { path: "/admin/information/", element: <InformationPage /> },
+      { path: "/admin/edit/", element: <EditPage /> },
+      { path: "/admin/personal/details", element: <DashboardPage /> },
+      { path: "/admin/template/", element: <ExperiencesPage /> },
+      { path: "/admin/work", element: <WorkPage /> },
+      { path: "/admin/test/:createdCvId", element: <AdminPage /> },
     ]
     // ==================================================================>
   },
-  
+
 ]);
 
 export default rooter;

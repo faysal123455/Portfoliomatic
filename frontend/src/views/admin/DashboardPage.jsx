@@ -17,10 +17,8 @@ const DashboardPage = () => {
         const formData = new FormData(e.target);
         formData.append("user_id", user.id);
 
-
         try {
             const response = await createCv(formData);
-
 
             console.log(response)
             // Supposons que la réponse contienne un champ 'cvId'
@@ -32,9 +30,6 @@ const DashboardPage = () => {
         } catch (error) {
             console.error("Erreur lors de la création du CV:", error);
         }
-
-
-
         // console.log(formData);
 
         // navigate('/login')
@@ -64,7 +59,7 @@ const DashboardPage = () => {
 
                             {/* personal information */}
 
-                            <div className="cv-form-blk">
+                            <div className="cv-form-blk-p">
                                 <div className="cv-form-row-title">
                                     <h3>personal information</h3>
                                 </div>
@@ -113,65 +108,9 @@ const DashboardPage = () => {
                                                 onchange="previewImage()"
                                             />
                                         </div>
-                                        {/* <div className="form-elem">
-                                            <label htmlFor="" className="form-label">
-                                                Address
-                                            </label>
-                                            <input
-                                                name="address"
-                                                type="text"
-                                                className="form-control address"
-                                                id=""
-                                                onkeyup="generateCV()"
-                                                placeholder="e.g. 20 rue ampere 77100"
-                                            />
-                                            <span className="form-text" />
-                                        </div> */}
+
                                     </div>
-                                    {/* <div className="cols-3">
-                                        <div className="form-elem">
-                                            <label htmlFor="" className="form-label">
-                                                Email
-                                            </label>
-                                            <input
-                                                name="email"
-                                                type="text"
-                                                className="form-control email"
-                                                id=""
-                                                onkeyup="generateCV()"
-                                                placeholder="e.g. johndoe@gmail.com"
-                                            />
-                                            <span className="form-text" />
-                                        </div>
-                                        <div className="form-elem">
-                                            <label htmlFor="" className="form-label">
-                                                Phone No:
-                                            </label>
-                                            <input
-                                                name="phoneno"
-                                                type="text"
-                                                className="form-control phoneno"
-                                                id=""
-                                                onkeyup="generateCV()"
-                                                placeholder="e.g. 456-768-798, 567.654.002"
-                                            />
-                                            <span className="form-text" />
-                                        </div>
-                                        <div className="form-elem">
-                                            <label htmlFor="" className="form-label">
-                                                Summary
-                                            </label>
-                                            <input
-                                                name="summary"
-                                                type="text"
-                                                className="form-control summary"
-                                                id=""
-                                                onkeyup="generateCV()"
-                                                placeholder="e.g. Doe"
-                                            />
-                                            <span className="form-text" />
-                                        </div>
-                                    </div> */}
+
                                 </div>
                             </div>
 

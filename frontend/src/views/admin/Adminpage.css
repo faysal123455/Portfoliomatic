@@ -305,7 +305,21 @@ a {
     margin-right: 1rem !important;
 }
 
+.sub-button {
 
+    background-color: #db54a3;
+    color: rgb(201, 19, 19);
+    padding: 20px 60px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.sub-button button:hover {
+    background-color: #b936da;
+}
 
 
 /* resume page */
@@ -329,6 +343,7 @@ a {
 
 .cv-form-blk {
     margin: 3rem 60px;
+    max-width: 40%;
 }
 
 .cv-form-row {
@@ -406,3 +421,4 @@ textarea {
     color: var(--clr-white);
     font-size: 1.6rem;
 }
+

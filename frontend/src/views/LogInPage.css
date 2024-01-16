@@ -29,7 +29,7 @@
     box-shadow: 0px 4px 10px 1px rgba(0, 0, 0, 0.1);
 }
 
-.container-login .title {
+.container-login .title_login {
     height: 64px;
     background: #95a3a0;
     border-radius: 5px 5px 0 0;
@@ -132,6 +132,33 @@ form .signup-link a:hover {
     text-decoration: underline;
 }
 
-card > email > fa-envelope {
-        color: blue;
+card>email>fa-envelope {
+    color: blue;
+}
+
+
+/* Media Queries */
+@media screen and (max-width: 768px) {
+    .container-login {}
+
+    .card {
+        width: 80%;
+    }
+
+    .title_login {
+        width: 320px
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .container-login {
+        max-width: 440px;
+        padding: 0 3px;
+        margin: 100px auto 170px 50px;
+    }
+
+    .title_login {
+        width: 320px;
+    }
+
 }

@@ -1,27 +1,4 @@
-/* .contact {
-    display: flex;
-    justify-content: center;
-    align-items: border-box;
-    height: 100vh;
-    background: aquamarine;
-}
 
-.post {
-    width: 500px;
-    padding: 6px;
-}
-
-.form-contact {
-    margin-top: 15rem;
-}
-
-input,
-#btn {
-    width: 150px;
-    padding: 6px;
-    cursor: pointer;
-    background-color: antiquewhite;
-} */
 textarea {
     width: 100%;
     padding: 6px;
@@ -36,7 +13,6 @@ textarea {
     padding: 0;
     box-sizing: border-box;
 }
-
 
 .contact {
     padding: 5rem 10px;
@@ -107,6 +83,20 @@ input[type="submit"]:active {
     100% {
         transform: scale(1);
     }
+}
+.send-button {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+    background-color: #008CBA;
+    color: white;
+}
+
+.send-button:hover {
+    background-color: #00688B;
 }
 
 @keyframes submit-active {

@@ -12,7 +12,6 @@ const Footer = () => {
                         <ul className="fu">
                             <li><a className="leg" href="#">about us</a></li>
                             <li><a className="leg" href="#">our services</a></li>
-                            <li><a className="leg" href="#">privacy policy</a></li>
                         </ul>
                     </div>
                     <div className="footer-col">
@@ -26,7 +25,6 @@ const Footer = () => {
                         <ul className="fu">
                             <li><a className="leg" href="#">Portfolio</a></li>
                             <li><a className="leg" href="#">About Us</a></li>
-                            <li><a className="leg" href="#">Contact Us</a></li>
                         </ul>
                     </div>
                     <div className="footer-col">

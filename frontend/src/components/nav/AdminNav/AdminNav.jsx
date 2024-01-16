@@ -22,14 +22,19 @@ const AdminNav = () => {
       <Link to="/" relative="path"><h1 className="site_name">Portfoliomatic</h1></Link>
 
       <nav ref={navRef}>
-      
+        <Link to="/admin/information/" relative="path">
+          information
+        </Link>
+        <Link to="/admin/personal/details" relative="path"> <FontAwesomeIcon icon={faUser} className="user"> </FontAwesomeIcon>
+          Dashboard
+        </Link>
         <Link to="/admin/test" relative="path">
           Admin
         </Link>
-        <Link to="/admin/dashboard" relative="path"> <FontAwesomeIcon icon={faUser} className="user"> </FontAwesomeIcon>
-          Dashboard
+        <Link to="/admin/test" relative="path">
+          edits
         </Link>
-        <Link to="/admin/experiences" relative="path">
+        <Link to="/admin/template/" relative="path">
           Experiences
         </Link>
         <Link to="/admin/work" relative="path">

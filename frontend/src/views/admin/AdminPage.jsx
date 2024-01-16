@@ -9,7 +9,6 @@ const AdminPage = () => {
     const [languageSections, setLanguageSections] = useState([{ id: 1 }]);
     const [skillSections, setSkillSections] = useState([{ id: 1 }]);
 
-
     const addExperienceSection = () => {
         const newSection = { id: experienceSections.length + 1 };
         setExperienceSections([...experienceSections, newSection]);
@@ -18,7 +17,6 @@ const AdminPage = () => {
         const updatedSections = experienceSections.filter((section) => section.id !== id);
         setExperienceSections(updatedSections);
     };
-
 
     const addEducationSection = () => {
         const newSection = { id: educationSections.length + 1 };
@@ -29,7 +27,6 @@ const AdminPage = () => {
         setEducationSections(updatedSections);
     };
 
-
     const addAchievementSection = () => {
         const newSection = { id: achievementSections.length + 1 };
         setAchievementSections([...achievementSections, newSection]);
@@ -39,7 +36,6 @@ const AdminPage = () => {
         setAchievementSections(updatedSections);
     };
 
-
     const addLanguageSection = () => {
         const newSection = { id: languageSections.length + 1 };
         setLanguageSections([...languageSections, newSection]);
@@ -48,7 +44,6 @@ const AdminPage = () => {
         const updatedSections = languageSections.filter((section) => section.id !== id);
         setLanguageSections(updatedSections);
     };
-    
 
     const addSkillSection = () => {
         const newSection = { id: skillSections.length + 1 };
@@ -58,17 +53,10 @@ const AdminPage = () => {
         const updatedSections = skillSections.filter((section) => section.id !== id);
         setSkillSections(updatedSections);
     };
-    
 
-
-
-
-
-
-
-    
     return (
         <>
+
             <div className="cv-form-blk">
                 <div className="cv-form-row-title">
                     <h3>Work experience</h3>
@@ -117,7 +105,7 @@ const AdminPage = () => {
                                             />
                                             <span className="form-text" />
                                         </div>
-                                        
+
                                     </div>
                                     <div className="form-elem">
                                         <label htmlFor="" className="form-label">
@@ -163,118 +151,119 @@ const AdminPage = () => {
                         +
                     </button>
 
-                    <div className="submit-button">
-                        <input type="submit" className="button" />
+                    <div className="form-item">
+                        <button type="submit" className="send-button">Send</button>
                     </div>
 
                 </form>
             </div>
 
-        
+
             <div className="cv-form-blk">
                 <div className="cv-form-row-title">
                     <h3>education</h3>
                 </div>
-            <form>
-                {educationSections.map((section) => (
-                    <div className="repeater" data-repeater-list="group-c" key={section.id}>
-                        <div data-repeater-item="">
-                            <div className="cv-form-row cv-form-row-experience">
-                                <div className="cols-3">
+                <form>
+                    {educationSections.map((section) => (
+                        <div className="repeater" data-repeater-list="group-c" key={section.id}>
+                            <div data-repeater-item="">
+                                <div className="cv-form-row cv-form-row-experience">
+                                    <div className="cols-3">
+                                        <div className="form-elem">
+                                            <label htmlFor="" className="form-label">
+                                                School Name
+                                            </label>
+                                            <input
+                                                name="edu_school"
+                                                type="text"
+                                                className="form-control edu_school"
+                                                id=""
+                                            />
+                                            <span className="form-text" />
+                                        </div>
+                                    </div>
+                                    <div className="cols-3">
+                                        <div className="form-elem">
+                                            <label htmlFor="" className="form-label">
+                                                Start Date
+                                            </label>
+                                            <input
+                                                name="edu_start_date"
+                                                type="date"
+                                                className="form-control edu_start_date"
+                                                id=""
+                                            />
+                                            <span className="form-text" />
+                                        </div>
+                                        <div className="form-elem">
+                                            <label htmlFor="" className="form-label">
+                                                End Date
+                                            </label>
+                                            <input
+                                                name="edu_end_date"
+                                                type="date"
+                                                className="form-control edu_end_date"
+                                                id=""
+                                            />
+                                            <span className="form-text" />
+                                        </div>
+                                    </div>
                                     <div className="form-elem">
                                         <label htmlFor="" className="form-label">
-                                            School Name
+                                            Country
                                         </label>
                                         <input
-                                            name="edu_school"
+                                            name="edu_country"
                                             type="text"
-                                            className="form-control edu_school"
-                                            id=""
-                                        />
-                                        <span className="form-text" />
-                                    </div>
-                                </div>
-                                <div className="cols-3">
-                                    <div className="form-elem">
-                                        <label htmlFor="" className="form-label">
-                                            Start Date
-                                        </label>
-                                        <input
-                                            name="edu_start_date"
-                                            type="date"
-                                            className="form-control edu_start_date"
+                                            className="form-control edu_country"
                                             id=""
                                         />
                                         <span className="form-text" />
                                     </div>
                                     <div className="form-elem">
                                         <label htmlFor="" className="form-label">
-                                            End Date
+                                            City
                                         </label>
                                         <input
-                                            name="edu_end_date"
-                                            type="date"
-                                            className="form-control edu_end_date"
+                                            name="edu_city"
+                                            type="text"
+                                            className="form-control edu_city"
                                             id=""
                                         />
                                         <span className="form-text" />
                                     </div>
+                                    <button
+                                        data-repeater-delete=""
+                                        type="button"
+                                        className="repeater-remove-btn"
+                                        onClick={() => removeEducationSection(section.id)}
+                                    >
+                                        -
+                                    </button>
                                 </div>
-                                <div className="form-elem">
-                                    <label htmlFor="" className="form-label">
-                                        Country
-                                    </label>
-                                    <input
-                                        name="edu_country"
-                                        type="text"
-                                        className="form-control edu_country"
-                                        id=""
-                                    />
-                                    <span className="form-text" />
-                                </div>
-                                <div className="form-elem">
-                                    <label htmlFor="" className="form-label">
-                                        City
-                                    </label>
-                                    <input
-                                        name="edu_city"
-                                        type="text"
-                                        className="form-control edu_city"
-                                        id=""
-                                    />
-                                    <span className="form-text" />
-                                </div>
-                                <button
-                                    data-repeater-delete=""
-                                    type="button"
-                                    className="repeater-remove-btn"
-                                    onClick={() => removeEducationSection(section.id)}
-                                >
-                                    -
-                                </button>
                             </div>
                         </div>
+                    ))}
+
+                    <button
+                        type="button"
+                        data-repeater-create=""
+                        value="Add"
+                        className="repeater-add-btn"
+                        onClick={addEducationSection}
+                    >
+                        +
+                    </button>
+
+                    <div className="form-item">
+                        <button type="submit" className="send-button">Send</button>
+
                     </div>
-                ))}
-
-                <button
-                    type="button"
-                    data-repeater-create=""
-                    value="Add"
-                    className="repeater-add-btn"
-                    onClick={addEducationSection}
-                >
-                    +
-                </button>
-
-                <div className="submit-button">
-                    <input type="submit" className="button" />
-                </div>
-            </form>
+                </form>
             </div>
 
 
-            
+
             <div className="cv-form-blk">
                 <div className="cv-form-row-title">
                     <h3>achievement</h3>
@@ -322,13 +311,13 @@ const AdminPage = () => {
 
 
 
-                                        
+
                                     </div>
                                 </div>
                             </div>
                         </div>
 
-                ))}
+                    ))}
                     <button
                         type="button"
                         data-repeater-create=""
@@ -339,8 +328,9 @@ const AdminPage = () => {
                         +
                     </button>
 
-                    <div className="submit-button">
-                        <input type="submit" className="button" />
+                    <div className="form-item">
+                        <button type="submit" className="send-button">Send</button>
+
                     </div>
                 </form>
             </div>
@@ -408,8 +398,9 @@ const AdminPage = () => {
                         +
                     </button>
 
-                    <div className="submit-button">
-                        <input type="submit" className="button" />
+                    <div className="form-item">
+                        <button type="submit" className="send-button">Send</button>
+
                     </div>
                 </form>
             </div>
@@ -423,7 +414,7 @@ const AdminPage = () => {
                     {skillSections.map((section) => (
                         <div className="repeater" data-repeater-list="group-d" key={section.id}>
                             <div data-repeater-item="">
-                                <div className="cv-form-row cv-form-row-skill"> 
+                                <div className="cv-form-row cv-form-row-skill">
                                     <div className="form-elem">
                                         <label htmlFor="" className="form-label">
                                             Skill
@@ -466,14 +457,12 @@ const AdminPage = () => {
                         +
                     </button>
 
-                    <div className="submit-button">
-                        <input type="submit" className="button" />
+                    <div className="form-item">
+                        <button type="submit" className="send-button">Send</button>
+
                     </div>
                 </form>
             </div>
-
-
-
 
 
             <Footer />

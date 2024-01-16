@@ -40,17 +40,14 @@ function LogInPage() {
     if (request.status === 200) {
 
       setUser(request.data);
-      navigate('/admin/dashboard');
+      navigate('/admin/information/');
     }
-
-
-  
   }
 
   return (
     <div className="container-log">
       <div className="container-login">
-        <div className="title">
+        <div className="title_login">
           <span>LogIn</span>
         </div>
         <div className="card">

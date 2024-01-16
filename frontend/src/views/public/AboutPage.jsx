@@ -9,13 +9,14 @@ const AboutPage = () => {
             <div className="responsive-container-block bigContainer">
                 <div className="responsive-container-block Container bottomContainer">
                     <div className="allText bottomText">
-                        <p className="text-blk headingText">About</p>
+                        <p className="text-blk headingText">Who we are ?</p>
                         <p className="text-blk subHeadingText">We build to your bespoke</p>
                         <p className="text-blk description">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fermentum
-                            pulvinar ullamcorper suspendisse ac eget. Pellentesque tempus leo in
-                            ullamcorper quis vestibulum ligula elementum ut. Congue in dignissim
-                            tincidunt ut dolor eu. Mi, eget posuere vitae sed purus nisl lorem.
+                            Portfoliomatic revolutionizes portfolio creation, offering unmatched customization, extensive features, and a user-friendly experience. It stands out for its flexibility, providing personalized layouts and interactive elements.
+
+                            Key advantages include being entirely free, removing financial barriers, and streamlining the job search process. Its intuitive interface makes portfolio creation easy, even for those with limited technical skills.
+
+                            Tailor your portfolio for each application by aligning it with job descriptions, highlighting relevant skills, experiences, and projects. Proofread for a polished presentation, reinforcing a professional image.
                         </p>
                         <a>
                             <button className="explore">lets start</button>

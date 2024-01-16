@@ -97,8 +97,7 @@ body {
 @media (max-width: 768px) {
     .container-foot {
             height: auto;
-        }
-    
+        }   
         .footer-col {
             width: auto;
             padding: 0px 25px;
@@ -113,6 +112,6 @@ body {
 
     .footer-col {
         width: auto;
-        padding: 10px 10px;
+        padding: 19px 10px;
     }
 }
