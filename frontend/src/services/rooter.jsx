@@ -47,7 +47,7 @@ const rooter = createBrowserRouter([
       { path: "/admin/information/", element: <InformationPage /> },
       { path: "/admin/edit/", element: <EditPage /> },
       { path: "/admin/personal/details", element: <DashboardPage /> },
-      { path: "/admin/template/", element: <ExperiencesPage /> },
+      { path: "/admin/template/:createdCvId", element: <ExperiencesPage /> },
       { path: "/admin/work", element: <WorkPage /> },
       { path: "/admin/test/:createdCvId", element: <AdminPage /> },
     ]

@@ -30,6 +30,26 @@ const cvById = async (req , res) => {
     }
 };
 
+const createTemplateCv = async (req , res) => {
+    try {
+        const { id } = req.params;
+        const [rows, fields] = await dbConnection.query("select cv.*, language.name as languageName, language.level as languageLevel from cv JOIN language ON cv.id = language.cv_id  where cv.id = ?", [id]);
+
+        
+
+        res.json({
+            data: rows
+        });
+    } catch (error) {
+        console.log(error);
+        res.json({
+            status: "error"
+        });
+    }
+};
+
+
+
 
 const createCv =  async (req, res) => {
     const file = req.files.shift();
@@ -73,4 +93,4 @@ const update = async (req , res) => {
 
 
 
-export { cvs, createCv, cvById }
+export { cvs, createCv, cvById, createTemplateCv }

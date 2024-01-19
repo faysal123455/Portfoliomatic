@@ -227,8 +227,6 @@ VALUES
     (NULL, 'Best Team Lead', 'Exceptional leadership and guidance', 20);
 
 
-
-
 CREATE TABLE portfoliomatic.skill(
     id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
     name VARCHAR(50) NOT NULL,
@@ -254,7 +252,7 @@ CREATE TABLE portfoliomatic.education(
     name VARCHAR(50) NOT NULL,
     date_start VARCHAR(50) NOT NULL,
     date_end VARCHAR(50) NOT NULL,
-    details VARCHAR(255) NOT NULL,
+    details VARCHAR(255),
     cv_id INT UNSIGNED NOT NULL,
     city_id INT UNSIGNED NOT NULL,
     FOREIGN KEY(cv_id) REFERENCES portfoliomatic.cv(id),

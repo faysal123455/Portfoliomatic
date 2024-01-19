@@ -1,5 +1,22 @@
 import dbConnection from "../service/dbconnection.js";
 
+
+const getSignupUser = async (data) => {
+    const sql = `
+    INSERT INTO portfoliomatic.user
+    VALUES(NULL, :firstname, :lastname, :email, :password)
+    ;
+    `;
+
+    try {
+        const [results] = await dbConnection.execute(sql, data);
+        return results;
+    } catch (error) {
+        return error;
+    }
+};
+
+
 const getUser = async () => {
     const sql = `
     SELECT user.*
@@ -13,20 +30,33 @@ const getUser = async () => {
     }
 };
 
-const createOneUser = async (data) => {
-    const sql = `
-    INSERT INTO portfoliomatic.user
-    VALUES
-        (NULL, :firstname, :lastname, :email, :password, :telephone)
-    ;`;
-
+const userDelete = async (userId) => {
+    const query = "DELETE FROM portfoliomatic.user WHERE id = ?";
     try {
-        const [results] = await dbConnection.execute(sql, data);
-        return results;
+        const [result] = await dbConnection.execute(query, [userId]);
+        console.log("Utilisateur supprimé avec succès");
+        return { result, success: true };
     } catch (error) {
-        return error;
+        console.error("Erreur lors de la suppression de l'utilisateur:", error);
+        return { error, success: false };
     }
 };
+
+
+// const createOneUser = async (data) => {
+//     const sql = `
+//     INSERT INTO portfoliomatic.user
+//     VALUES
+//         (NULL, :firstname, :lastname, :email, :password, :telephone)
+//     ;`;
+
+//     try {
+//         const [results] = await dbConnection.execute(sql, data);
+//         return results;
+//     } catch (error) {
+//         return error;
+//     }
+// };
 
 const getLoginUser = async (data) => {
     const sql = `
@@ -45,19 +75,4 @@ const getLoginUser = async (data) => {
     // vérifier le hachage du mot de passe
 };
 
-const getSignupUser = async (data) => {
-    const sql = `
-    INSERT INTO portfoliomatic.user
-    VALUES(NULL, :firstname, :lastname, :email, :password)
-    ;
-    `;
-
-    try {
-        const [results] = await dbConnection.execute(sql, data);
-        return results;
-    } catch (error) {
-        return error;
-    }
-};
-
-export { getUser, createOneUser, getLoginUser, getSignupUser };
+export { getUser, getLoginUser, getSignupUser, userDelete };

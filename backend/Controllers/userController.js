@@ -1,8 +1,8 @@
 import {
     getUser,
-    createOneUser,
     getLoginUser,
     getSignupUser,
+    userDelete
 } from "../repositories/userRepo.js";
 
 import argon2 from "argon2";
@@ -18,16 +18,102 @@ const users = (req, res) => {
     });
 };
 
-const createUser = (req, res) => {
-    // console.log(req.body);
-    createOneUser(req.body).then((data) => {
-        return res.status(200).json({
+// const createUser = (req, res) => {
+//     // console.log(req.body);
+//     createOneUser(req.body).then((data) => {
+//         return res.status(200).json({
+//             status: 200,
+//             message: "all good for user",
+//             data: data,
+//         });
+//     });
+// };
+
+
+
+
+// const deleteUserController = async (req, res) => {
+//     const userId = req.params.userId;
+//     try {
+//         const deletionResult = await userDelete(userId);
+//         if (!deletionResult.success) {
+//             return res.status(500).json({
+//                 status: 500,
+//                 message: "Erreur lors de la suppression de l'utilisateur",
+//             });
+//         }
+//         res.status(200).json({
+//             status: 200,
+//             message: "Utilisateur supprimé avec succès",
+//         });
+//     } catch (error) {
+//         console.error("Erreur lors de la suppression de l'utilisateur:", error);
+//         res.status(500).json({
+//             status: 500,
+//             message: "Erreur lors de la suppression de l'utilisateur",
+//         });
+//     }
+// };
+
+
+const deleteUserController = async (req, res) => {
+    try {
+        const userId = req.params.userId;
+
+        // Delete associated records in the cv table
+        await dbConnection.query("DELETE FROM cv WHERE user_id = ?", [userId]);
+
+        // Now, delete the user from the user table
+        const [result] = await dbConnection.execute("DELETE FROM user WHERE id = ?", [userId]);
+
+        res.json({
             status: 200,
-            message: "all good for user",
-            data: data,
+            message: "User deleted successfully",
+            data: result,
         });
-    });
+    } catch (error) {
+        console.error("Error deleting user:", error);
+        res.status(500).json({
+            status: 500,
+            message: "Error deleting user",
+            error: error,
+        });
+    }
 };
+
+const updateUser = async (req, res) => {
+    try {
+        const { firstname, lastname, email, password } = req.body
+        const { id } = req.params
+        const sql = "update user set firstname = ?, lastname = ?, email = ?, password = ? where id = ?"
+        const [rows, fields] = await dbConnection.query(sql, [firstname, lastname, email, password, id])
+        res.json({
+            data: rows
+        })
+    } catch (error) {
+        console.log(error);
+        res.json({
+            status: "error"
+        })
+    }
+};
+
+// const userDelete = async (req, res) => {
+//     try {
+//         const { id } = req.params
+//         const [rows, fields] = await dbConnection.query("delete from user where id = ?", [id])
+//         res.json({
+//             data: rows
+//         })
+//     } catch (error) {
+//         console.log(error);
+//         res.json({
+//             status: "error"
+//         })
+//     }
+// };
+
+
 
 const loginUser = (req, res) => {
     //   console.log(req.body);
@@ -39,6 +125,9 @@ const loginUser = (req, res) => {
         });
     });
 };
+
+
+
 
 const signupUser = async (req, res) => {
     console.log('bodyHashed');
@@ -57,6 +146,9 @@ const signupUser = async (req, res) => {
         });
     });
 };
+
+
+
 
 const checkUserLogin = async (req, res) => {
     try {
@@ -84,4 +176,4 @@ const checkUserLogin = async (req, res) => {
 }
 
 
-export { users, createUser, loginUser, signupUser, checkUserLogin };
+export { users, loginUser, signupUser, checkUserLogin, updateUser, deleteUserController };

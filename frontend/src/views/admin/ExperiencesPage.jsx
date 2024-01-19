@@ -1,12 +1,39 @@
+import { useParams } from "react-router-dom";
 import Footer from "../../components/footer/Footer";
 
+// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+// import { faRightFromBracket } from "@fortawesome/free-solid-svg-icons";
+
+
 import "./ExperiencesPage.css";
+import { useEffect, useState } from "react";
+import { getInfoOfCvId } from "../../services/api";
 
 const ExperiencesPage = () => {
+
+    const { createdCvId } = useParams();
+    console.log(createdCvId)
+    const [cv, setCv] = useState([])
+
+    useEffect(() => {
+        getInfoOfCvId(createdCvId)
+            .then((data) => {
+                if (data && data.data) {
+                    console.log(data)
+                    setCv(data.data);
+                }
+            })
+            .catch((error) => {
+                console.error(error);
+                // Handle the error as needed
+            });
+    }, [createdCvId]);
+
     return (
         <>
             <section className="real-cv">
                 <div className="cv-container">
+
                     <div className="left-column">
                         <img
                             className="portait"
@@ -20,88 +47,52 @@ const ExperiencesPage = () => {
                                     <a href="mailto:contact@pgomba.com">contact@pgomba.com</a>
                                 </li>
                                 <li>
+                                    <i className="icon fas fa-phone text-blue" /> 04 75 53 80 50
+                                </li>
+                                <li>
                                     <i className="icon fas fa-phone text-blue" /> contact@pgomba.com
                                 </li>
+                                {/* 
                                 <li>
-                                    <i className="icon fas fa-phone text-blue" /> 04 75 53 80 50
-                                </li>
-                                <li>
-                                    <i className="icon fas fa-phone text-blue" /> 04 75 53 80 50
-                                </li>
-                                <li>
-                                    <i className="icon fas fa-phone text-blue" /> 04 75 53 80 50
-                                </li>
-                                <li>
-                                    <i className="icon fas fa-phone text-blue" /> 04 75 53 80 50
-                                </li>
-                                <li>
-                                    <i className="icon fas fa-map-marker-alt text-blue" />{" "}
-                                    Boulevard de , 4020 Liège
-                                </li>
+                                    <i className="icon faRightFromBracket " /> hello
+                                </li> */}
+
                             </ul>
                         </div>
+{/* 
                         <div className="section">
-                            <h2>COMPÉTENCES</h2>
+                            <h2>Skill</h2>
                             <ul className="skills">
+                                {cv.map((skill, skillIndex) => (
 
-                                <li>
-                                    <i className="icon fas fa-check-circle text-darkblue" /> PHP
-                                </li>
-                                <li>
-                                    <i className="icon fas fa-check-circle text-darkblue" /> Zend
-                                    Framework
-                                </li>
-                                <li>
-                                    <i className="icon fas fa-check-circle text-darkblue" /> Zend
-                                    Framework
-                                </li>
-                                <li>
-                                    <i className="icon fas fa-check-circle text-darkblue" /> Zend
-                                    Framework
-                                </li>
-                                <li>
-                                    <i className="icon fas fa-check-circle text-darkblue" /> Zend
-                                    Framework
-                                </li>
-                                <li>
-                                    <i className="icon fas fa-check-circle text-darkblue" /> MySQL
-                                </li>
-                                <li>
-                                    <i className="icon fas fa-check-circle text-darkblue" /> Git |
-                                    Github
-                                </li>
+
+                                    <li key={skillIndex}>{skill.skillName}</li>
+                                ))}
                             </ul>
-                        </div>
+                        </div> */}
+
+
 
                         <div className="section">
-                            <h2>Centres d'intérêt</h2>
-                            <p>
-                                Jeux vidéo, jouer et développer
-                                <br />
-                                Musique, écoute et composition
-                                <br />
-                                Art en général
-                                <br />
-                                Sport
-                                <br />
-                                Informatique en général
-                            </p>
-                        </div>
-                        <div className="section">
-                            <h2>Langues</h2>
-                            <p>
-                                Français, langue maternelle
-                                <br />
-                                Anglais, compétence professionnelle
-                            </p>
+                            <h2>Language</h2>
+
+                            <div className="flex">
+                                {cv.map((language, langIndex) => (
+                                    <p key={langIndex}>{language.languageName} - {language.languageLevel}
+                                    
+                                    </p>
+                                ))}
+                                {/* {cv.map((language, langIndex) => (
+                        <p key={langIndex}>{language.languageLevel}</p>
+                    ))} */}
+                            </div>
                         </div>
                     </div>
 
 
-
-
-
                     <div className="right-column">
+
+
                         <div className="header">
                             <div className="wave">
                                 <h1 className="nom">Pierre Gomba</h1>
@@ -118,10 +109,13 @@ const ExperiencesPage = () => {
                             </div>
                         </div>
 
+
+
+
                         <div className="content">
                             <div className="section">
                                 <h2>
-                                    <span className="text-blue">professionelles</span>
+                                    <span className="text-blue">work</span>
                                 </h2>
                                 <p>
                                     <strong>
@@ -167,7 +161,7 @@ const ExperiencesPage = () => {
                             </div>
                             <div className="section">
                                 <h2>
-                                    <span className="text-blue">&amp; formations</span>
+                                    <span className="text-blue">&amp; Education</span>
                                 </h2>
                                 <p>
                                     <strong>
@@ -206,6 +200,7 @@ const ExperiencesPage = () => {
                         </div>
                     </div>
                 </div>
+
             </section>
 
             <Footer />

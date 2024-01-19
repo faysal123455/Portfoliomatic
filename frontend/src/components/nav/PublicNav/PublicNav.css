@@ -17,7 +17,7 @@ header {
 
 nav a {
     margin: 0 1rem;
-    color: var(--textColor);
+    color: var(--textColor) !important;
     text-decoration: none;
 }
 

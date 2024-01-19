@@ -27,16 +27,16 @@ const skillById = async (req, res) => {
     }
 };
 
-const createSkill = ( req, res) => {
-    console.log(req.body);
+const createSkill = (req, res) => {
+    console.log("lolo", req.body);
     createOneSkill(req.body).then(data => {
         return res.status(200).json({
-            status:200,
+            status: 200,
             message: "all good for skill",
             data: data,
         });
     })
-}
+};
 
 const update = async (req, res) => {
     try {

@@ -28,7 +28,7 @@ const languageById = async (req, res) => {
 };
 
 const createLanguage = (req, res) => {
-    console.log(req.body);
+    console.log("lolo",req.body);
     createOneLanguage(req.body).then(data => {
         return res.status(200).json({
             status: 200,
@@ -37,7 +37,6 @@ const createLanguage = (req, res) => {
         });
     })
 };
-
 
 const update = async (req, res) => {
     try {
