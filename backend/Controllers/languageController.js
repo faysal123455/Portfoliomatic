@@ -12,6 +12,7 @@ const languages = (req, res) => {
     })
 }
 
+
 const languageById = async (req, res) => {
     try {
         const { id } = req.params;

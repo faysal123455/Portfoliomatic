@@ -58,7 +58,7 @@ nav {
     font-size: 3rem;
 }
 
-.login-button {
+/* .login-button {
     padding: 6px 10px;
     margin-right: 16px;
     background-color: rgb(160, 151, 151);
@@ -67,11 +67,11 @@ nav {
     border: none;
     cursor: pointer;
     border-radius: 9px;
-}
-
+} */
+/* 
 .login-button:hover {
     background-color: green;
-}
+} */
 
 @media only screen and (max-width: 1024px) {
     header .nav-btn {

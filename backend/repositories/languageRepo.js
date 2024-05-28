@@ -13,6 +13,20 @@ const getLanguage = async () => {
     }
 };
 
+const getLanguageByListIds = async (listIds) => {
+    const sql = `
+    SELECT language.*
+    FROM portfoliomatic.language
+    WHERE language.id IN(${listIds});`
+
+    try {
+        const [results] = await dbConnection.execute(sql);
+        return results;
+    } catch (error) {
+        return error;
+    }
+};
+
 const createOneLanguage = async (data) => {
     const sql = `
     INSERT INTO portfoliomatic.language
@@ -30,4 +44,4 @@ VALUES
     }
 };
 
-export { getLanguage, createOneLanguage };
+export { getLanguage, createOneLanguage, getLanguageByListIds };

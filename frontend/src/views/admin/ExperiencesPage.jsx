@@ -13,13 +13,14 @@ const ExperiencesPage = () => {
 
     const { createdCvId } = useParams();
     console.log(createdCvId)
-    const [cv, setCv] = useState([])
+    const [cv, setCv] = useState({})
 
     useEffect(() => {
         getInfoOfCvId(createdCvId)
             .then((data) => {
                 if (data && data.data) {
                     console.log(data)
+                    console.log('cv');
                     setCv(data.data);
                 }
             })
@@ -59,29 +60,31 @@ const ExperiencesPage = () => {
 
                             </ul>
                         </div>
-{/* 
+                        {
+                            <div className="section">
+                                <h2>Skills</h2>
+                                <ul className="skills">
+                                    {/* {cv.map((skill, skillIndex) => (
+
+                                        <li key={skillIndex}>{skill.skillName}</li>
+                                    ))} */}
+                                </ul>
+                            </div>}
+
+
+
                         <div className="section">
-                            <h2>Skill</h2>
-                            <ul className="skills">
-                                {cv.map((skill, skillIndex) => (
-
-
-                                    <li key={skillIndex}>{skill.skillName}</li>
-                                ))}
-                            </ul>
-                        </div> */}
-
-
-
-                        <div className="section">
-                            <h2>Language</h2>
+                            <h2>Languages</h2>
 
                             <div className="flex">
-                                {cv.map((language, langIndex) => (
-                                    <p key={langIndex}>{language.languageName} - {language.languageLevel}
-                                    
-                                    </p>
-                                ))}
+                                
+                                {JSON.stringify(cv.languages)}
+                                
+                                {/* {cv.languages.map((language, langIndex) => <p key={langIndex}>{language.name}</p>)} */}
+
+                                {/* {cv.languages.map((language, langIndex) => (
+                                    <p key={langIndex}>{language.languageName} - {language.languageLevel}</p>
+                                ))} */}
                                 {/* {cv.map((language, langIndex) => (
                         <p key={langIndex}>{language.languageLevel}</p>
                     ))} */}
@@ -95,17 +98,25 @@ const ExperiencesPage = () => {
 
                         <div className="header">
                             <div className="wave">
-                                <h1 className="nom">Pierre Gomba</h1>
+                                <h1 className="nom">{cv.prenom} {cv.nom}</h1>
                                 <p>Freelance Front-end Developer</p>
 
-                                <p className="summary">
-                                    Le <strong>Front-end</strong> est une de mes passions : j’aime
+                                <h6 className="summary">
+                                    <p>
+                                        {cv.goal}
+                                    </p>
+                                    {/* {cv.map((summary, sumIndex) => (
+                                        <p key={sumIndex}>{summary.summaryName} 
+
+                                        </p>
+                                    ))} */}
+                                    {/* Le <strong>Front-end</strong> est une de mes passions : j’aime
                                     intégrer ou imaginer des interfaces modernes, les rendre
                                     responsive et les dynamiser avec des animations élégantes. Mes
                                     deux technos de coeur sont <strong>Angular</strong> et{" "}
                                     <strong>Bootstrap</strong>, que j’utilise depuis plus de 6 ans.
-                                    Je suis aussi Fullstack : PHP, MySQL, Doctrine…
-                                </p>
+                                    Je suis aussi Fullstack : PHP, MySQL, Doctrine… */}
+                                </h6>
                             </div>
                         </div>
 
@@ -185,6 +196,7 @@ const ExperiencesPage = () => {
                                     <em>Bachelier en Sciences humaines</em>, Haute École de Liège
                                 </p>
                             </div>
+
                             <div className="section">
                                 <h2>
                                     <span className="text-blue">archivments</span>
@@ -197,6 +209,7 @@ const ExperiencesPage = () => {
                                     Brevet d’animateur de Centre de Vacances
                                 </p>
                             </div>
+
                         </div>
                     </div>
                 </div>

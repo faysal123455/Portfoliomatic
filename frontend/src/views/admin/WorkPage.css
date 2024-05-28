@@ -19,9 +19,12 @@
 }
 
 .user-table {
+    font-weight: 800;
+    font-size: 10px;
     width: 100%;
     border-collapse: collapse;
-    margin-top: 20px;
+    margin-left: 30%;
+    margin-top: 10px;
 }
 
 .user-table th,
@@ -41,7 +44,7 @@
     align-items: center;
     text-align: center;
     width: 80%;
-    margin: 0 auto;
+    /* margin: 0 auto; */
 }
 
 h5 {

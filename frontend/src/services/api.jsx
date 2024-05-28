@@ -62,7 +62,7 @@ const createSkill = async (data) => {
 export async function getInfoOfCvId(createdCvId) {
     // const { user, setUser } = useContext(UserContext);
     // console.log(user)
-    const URL = `${ apiURL }/cvs/${createdCvId} }`;
+    const URL = `${ apiURL }/cvs/${createdCvId}`;
     console.log(URL)
     try {
         const requestInfos = new Request(URL, {

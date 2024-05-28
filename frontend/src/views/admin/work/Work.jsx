@@ -2,11 +2,8 @@ import "./Work.css"
 
 const Work = () => {
 
-
-
     return (
         <>
-
 
             <div className="cv-form-blk">
                 <div className="cv-form-row-title">
@@ -141,7 +138,7 @@ const Work = () => {
                         +
                     </button>
                 </div>
-            </div> 
+            </div>
 
         </>
     )

@@ -1,11 +1,11 @@
-import express from 'express';
+// import express from 'express';
 
-import { getbill } from '../Controllers/nodemailController.js';
+// import { getbill } from '../Controllers/nodemailController.js';
 
-const getbillsRouter = express.Router();
+// const getbillsRouter = express.Router();
 
 
-// router.post('/user/signup', signup);
-getbillsRouter.post('/', getbill);
+// // router.post('/user/signup', signup);
+// getbillsRouter.post('/', getbill);
 
-export default getbillsRouter;
+// export default getbillsRouter;

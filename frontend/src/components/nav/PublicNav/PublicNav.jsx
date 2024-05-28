@@ -21,8 +21,6 @@ function PublicNav() {
     <header>
       <Link to="/" relative="path"><h1 className="site_name">Portfoliomatic</h1></Link>
 
-
-
       <nav ref={navRef}>
         <Link to="/contact" relative="path">
           Contact
