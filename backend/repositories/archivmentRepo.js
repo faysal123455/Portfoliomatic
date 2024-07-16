@@ -13,11 +13,25 @@ const getArchivment = async () => {
     }
 };
 
+const getArchivmentByListIds = async (listIds) => {
+    const sql = `
+    SELECT archivment.*
+    FROM portfoliomatic.archivment
+    WHERE archivment.id IN(${listIds});`
+
+    try {
+        const [results] = await dbConnection.execute(sql);
+        return results;
+    } catch (error) {
+        return error;
+    }
+};
+
 const createOneArchivment = async (data) => {
     const sql = `
     INSERT INTO portfoliomatic.archivment
     VALUES
-    (NULL, 'humanity','father of humanity','1');`
+    (NULL, :name,:recognitation , :cv_id);`
 
 
     try {
@@ -46,4 +60,4 @@ const updateArchivment = async (id, newData) => {
     }
 };
 
-export { getArchivment, createOneArchivment, updateArchivment };
+export { getArchivment, createOneArchivment, updateArchivment, getArchivmentByListIds };

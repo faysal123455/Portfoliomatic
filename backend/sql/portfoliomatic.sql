@@ -77,16 +77,54 @@ CREATE TABLE portfoliomatic.country(
 INSERT INTO portfoliomatic.country
 VALUES
     (NULL, 'United States'),
-    (NULL, 'Canada'),
+    (NULL, 'france'),
     (NULL, 'United Kingdom'),
     (NULL, 'Germany'),
-    (NULL, 'Australia'),
-    (NULL, 'Japan'),
+    (NULL, 'spain'),
+    (NULL, 'bangladesh'),
     (NULL, 'Brazil'),
-    (NULL, 'South Korea'),
+    (NULL, 'italy'),
     (NULL, 'China'),
     (NULL, 'Russia'),
     (NULL, 'Mexico');
+
+
+
+CREATE TABLE portfoliomatic.city(
+    id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(50) NOT NULL,
+    country_id INT UNSIGNED NOT NULL,
+    cv_id INT UNSIGNED NOT NULL,
+    FOREIGN KEY(cv_id) REFERENCES portfoliomatic.cv(id),
+    FOREIGN KEY(country_id) REFERENCES portfoliomatic.country(id)
+);
+INSERT INTO portfoliomatic.city
+VALUES
+    (NULL, 'New York', 1, 1),
+    (NULL, 'Los Angeles', 1, 2),
+    (NULL, 'Paris', 2, 3),
+    (NULL, 'Lyon', 2, 4),
+    (NULL, 'London', 3, 5),
+    (NULL, 'Manchester', 3, 6),
+    (NULL, 'Berlin', 4, 7),
+    (NULL, 'Munich', 4, 8),
+    (NULL, 'Madrid', 5, 9),
+    (NULL, 'Barcelona', 5, 10),
+    (NULL, 'Dhaka', 6, 1),
+    (NULL, 'Chittagong', 6, 2),
+    (NULL, 'Rio de Janeiro', 7, 3),
+    (NULL, 'Fortaleza', 7, 4),
+    (NULL, 'Rome', 8, 5),
+    (NULL, 'Milan', 8, 6),
+    (NULL, 'Beijing', 9, 7),
+    (NULL, 'Shanghai', 9, 8),
+    (NULL, 'Moscow', 10, 9),
+    (NULL, 'Saint Petersburg', 10, 10),
+    (NULL, 'Mexico City', 11, 1),
+    (NULL, 'Guadalajara', 11, 2);
+
+
+
 
 CREATE TABLE portfoliomatic.contact(
     id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
@@ -119,40 +157,6 @@ VALUES
     (NULL, '555-888-9999', 'linkedin.com/mark', 'twitter.com/markmark', 19),
     (NULL, '555-000-1111', 'linkedin.com/sophia', 'twitter.com/sophiasophia', 20);
 
-
-CREATE TABLE portfoliomatic.city(
-    id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
-    name VARCHAR(50) NOT NULL,
-    cv_id INT UNSIGNED NOT NULL,
-    country_id INT UNSIGNED NOT NULL,
-    FOREIGN KEY(cv_id) REFERENCES portfoliomatic.cv(id),
-    FOREIGN KEY(country_id) REFERENCES portfoliomatic.country(id)
-);
-INSERT INTO portfoliomatic.city
-VALUES
-    (NULL,'Dhaka',1, 2),
-    (NULL,'Paris',2, 5),
-    (NULL,'New York', 1, 6),
-    (NULL,'Los Angeles', 1,8),
-    (NULL,'Paris', 2,9),
-    (NULL,'London', 3,4),
-    (NULL,'Mumbai', 4,7),
-    (NULL,'Tokyo', 5,4),
-    (NULL,'Sydney', 6,3),
-    (NULL,'Rio de Janeiro', 7,3),
-    (NULL,'Seoul', 8,2),
-    (NULL,'Moscow', 9,1),
-    (NULL,'Mexico City', 10,2),
-    (NULL, 'Berlin', 4, 10),
-    (NULL, 'Barcelona', 5, 7),
-    (NULL, 'Toronto', 2, 3),
-    (NULL, 'Rome', 3, 6),
-    (NULL, 'San Francisco', 1, 9),
-    (NULL, 'Dubai', 6, 1),
-    (NULL, 'Singapore', 7, 5),
-    (NULL, 'Sydney', 9, 4),
-    (NULL, 'Amsterdam', 10, 8),
-    (NULL, 'San Diego', 8, 2);
 
 
 CREATE TABLE portfoliomatic.summary(
@@ -236,6 +240,8 @@ CREATE TABLE portfoliomatic.skill(
 INSERT INTO portfoliomatic.skill
 VALUES
     (NULL, 'Problem Solving',1),
+    (NULL, 'Leadership',1),
+    (NULL, 'Programming',1),
     (NULL, 'Leadership',2),
     (NULL, 'Programming',3),
     (NULL, 'Communication', 4),
@@ -286,36 +292,26 @@ CREATE TABLE portfoliomatic.work(
 );
 INSERT INTO portfoliomatic.work
 VALUES
-    (NULL, 'Pernod Ricard','14-01-23', '01-01-2024','Project Manager',1, 5),
-    (NULL, 'simplon limited','14-01-23', '01-01-2024','Sales Representative',2, 3),
-    (NULL, 'Apple Inc.', '14-01-23', '01-01-2024', 'Software Engineer', 3, 9),
-    (NULL, 'Amazon.com', '14-01-23', '01-01-2024', 'Marketing Manager', 4, 7),
-    (NULL, 'Microsoft Corporation', '14-01-23', '01-01-2024', 'Product Designer', 5, 2),
-    (NULL, 'Google LLC', '14-01-23', '01-01-2024', 'Data Scientist', 6, 8),
-    (NULL, 'Tesla, Inc.', '14-01-23', '01-01-2024', 'Electrical Engineer', 7, 4),
-    (NULL, 'Facebook, Inc.', '14-01-23', '01-01-2024', 'Content Creator', 8, 6),
-    (NULL, 'IBM', '14-01-23', '01-01-2024', 'Business Analyst', 9, 10),
-    (NULL, 'Intel Corporation', '14-01-23', '01-01-2024', 'Quality Assurance Engineer', 10, 1),
-    (NULL, 'Walmart Inc.', '14-01-23', '01-01-2024', 'Store Manager', 1, 5),
-    (NULL, 'Johnson & Johnson', '14-01-23', '01-01-2024', 'Pharmaceutical Researcher', 2, 3),
-    (NULL, 'Oracle Corporation', '14-01-23', '01-01-2024', 'Database Administrator', 3, 9),
-    (NULL, 'Netflix, Inc.', '14-01-23', '01-01-2024', 'Content Writer', 4, 7),
-    (NULL, 'Twitter, Inc.', '14-01-23', '01-01-2024', 'Social Media Manager', 5, 2),
-    (NULL, 'Uber Technologies, Inc.', '14-01-23', '01-01-2024', 'Driver Partner', 6, 8),
-    (NULL, 'General Electric', '14-01-23', '01-01-2024', 'Mechanical Engineer', 7, 4),
-    (NULL, 'Procter & Gamble', '14-01-23', '01-01-2024', 'Product Manager', 8, 6),
-    (NULL, 'Cisco Systems', '14-01-23', '01-01-2024', 'Network Engineer', 9, 10),
-    (NULL, 'Verizon Communications', '14-01-23', '01-01-2024', 'Customer Service Representative', 10, 1);
+    (NULL, 'Pernod Ricard', 'Project Manager', '14-01-23', '01-01-2024', 1, 5),
+    (NULL, 'simplon limited', 'Sales Representative', '14-01-23', '01-01-2024', 2, 3),
+    (NULL, 'Apple Inc.', 'Software Engineer', '14-01-23', '01-01-2024', 3, 9),
+    (NULL, 'Amazon.com', 'Marketing Manager', '14-01-23', '01-01-2024', 4, 7),
+    (NULL, 'Microsoft Corporation', 'Product Designer', '14-01-23', '01-01-2024', 5, 2),
+    (NULL, 'Google LLC', 'Data Scientist', '14-01-23', '01-01-2024', 6, 8),
+    (NULL, 'Tesla, Inc.', 'Electrical Engineer', '14-01-23', '01-01-2024', 7, 4),
+    (NULL, 'Facebook, Inc.', 'Content Creator', '14-01-23', '01-01-2024', 8, 6),
+    (NULL, 'IBM', 'Business Analyst', '14-01-23', '01-01-2024', 9, 10),
+    (NULL, 'Intel Corporation', 'Quality Assurance Engineer', '14-01-23', '01-01-2024', 10, 1),
+    (NULL, 'Walmart Inc.', 'Store Manager', '14-01-23', '01-01-2024', 1, 5),
+    (NULL, 'Johnson & Johnson', 'Pharmaceutical Researcher', '14-01-23', '01-01-2024', 2, 3),
+    (NULL, 'Oracle Corporation', 'Database Administrator', '14-01-23', '01-01-2024', 3, 9),
+    (NULL, 'Netflix, Inc.', 'Content Writer', '14-01-23', '01-01-2024', 4, 7),
+    (NULL, 'Twitter, Inc.', 'Social Media Manager', '14-01-23', '01-01-2024', 5, 2),
+    (NULL, 'Uber Technologies, Inc.', 'Driver Partner', '14-01-23', '01-01-2024', 6, 8),
+    (NULL, 'General Electric', 'Mechanical Engineer', '14-01-23', '01-01-2024', 7, 4),
+    (NULL, 'Procter & Gamble', 'Product Manager', '14-01-23', '01-01-2024', 8, 6),
+    (NULL, 'Cisco Systems', 'Network Engineer', '14-01-23', '01-01-2024', 9, 10),
+    (NULL, 'Verizon Communications', 'Customer Service Representative', '14-01-23', '01-01-2024', 10, 1);
 
 
-CREATE TABLE portfoliomatic.getbill (
-    id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
-    name VARCHAR(50) NOT NULL,
-    email VARCHAR(50) NOT NULL,
-    message VARCHAR(255) NOT NULL
-);
 
-INSERT INTO portfoliomatic.getbill
-VALUES
-    (NULL, 'John Doe', 'john.doe@example.com', 'This is a message with exactly 255 characters. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec at mauris eu odio placerat facilisis. Duis vel malesuada purus. Sed id augue eu est tempor pharetra.'
-    );

@@ -13,11 +13,30 @@ const getWork = async () => {
     }
 };
 
+const getWorkByListIds = async (listIds) => {
+    const sql = `
+    SELECT work.*, city.name AS city, country.name AS country
+    FROM portfoliomatic.work
+    JOIN portfoliomatic.city
+    ON city.id = work.city_id
+    JOIN portfoliomatic.country
+    ON country.id = city.country_id
+    WHERE work.id IN(${listIds});`
+
+    try {
+        const [results] = await dbConnection.execute(sql);
+        return results;
+    } catch (error) {
+        return error;
+    }
+};
+
 const createOneWork = async (data) => {
     const sql = `
     INSERT INTO portfoliomatic.work
     VALUES
-    (NULL, 'Pernod Ricard', 'paris','14-01-23', '01-01-2024','Project Manager','1');`
+    (NULL, :company_name, :job_title, :date_start, :date_end, :cv_id, :city_id);
+    `;
 
 
     try {
@@ -29,4 +48,4 @@ const createOneWork = async (data) => {
     }
 };
 
-export { getWork, createOneWork };
+export { getWork, createOneWork, getWorkByListIds };

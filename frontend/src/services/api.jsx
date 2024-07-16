@@ -57,6 +57,97 @@ const createSkill = async (data) => {
     // console.log(data);
 }
 
+const createContact = async (data) => {
+    console.log(data)
+    const requestInfos = new Request(`${apiURL}/contacts`, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data),
+    });
+
+    const request = await fetch(requestInfos);
+    const response = await request.json();
+    console.log(response)
+
+    // console.log(data);
+}
+
+const createWork = async (data) => {
+    console.log(data)
+    const requestInfos = new Request(`${apiURL}/works`, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data),
+    });
+
+    const request = await fetch(requestInfos);
+    const response = await request.json();
+    console.log(response)
+
+    // console.log(data);
+}
+
+const createEducation = async (data) => {
+    console.log(data)
+    const requestInfos = new Request(`${apiURL}/educations`, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data),
+    });
+
+    const request = await fetch(requestInfos);
+    const response = await request.json();
+    console.log(response)
+
+    // console.log(data);
+}
+
+const createArchivment = async (data) => {
+    console.log(data)
+    const requestInfos = new Request(`${apiURL}/archivments`, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data),
+    });
+
+    const request = await fetch(requestInfos);
+    const response = await request.json();
+    console.log(response)
+
+    // console.log(data);
+}
+
+
+const createSummary = async (data) => {
+    console.log(data)
+    const requestInfos = new Request(`${apiURL}/summarys`, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data),
+    });
+
+    const request = await fetch(requestInfos);
+    const response = await request.json();
+    console.log(response)
+
+    // console.log(data);
+}
+
+
+
+
+
+
 
 
 export async function getInfoOfCvId(createdCvId) {
@@ -140,4 +231,28 @@ export async function createCv(data) {
 }
 
 
-export { createUser, createLanguage, createSkill, loginUser, createPersonalInformations }
+export async function getCitys() {
+    // const { user, setUser } = useContext(UserContext);
+    // console.log(user)
+    const URL = `${apiURL}/citys`;
+    console.log(URL)
+    try {
+        const requestInfos = new Request(URL, {
+            method: "get",
+        });
+
+        const req = await fetch(requestInfos);
+
+        if (!req.ok) {
+            throw new Error(`Erreur lors de la récupération des villes : ${req.status}`);
+        }
+
+        const res = await req.json();
+        return res;
+    } catch (error) {
+        throw new Error(`Erreur lors de la récupération des villes : ${error.message}`);
+    }
+}
+
+
+export { createUser, createLanguage, createSkill, createContact, createWork, createEducation, createArchivment, createSummary, loginUser, createPersonalInformations }

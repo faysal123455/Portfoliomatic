@@ -80,28 +80,6 @@ const Education = () => {
                                         <span className="form-text" />
                                     </div>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
                                 </div>
                                 <div className="cols-3">
                                     <div className="form-elem">

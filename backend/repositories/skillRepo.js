@@ -13,11 +13,25 @@ const getSkill = async () => {
     }
 };
 
+const getSkillByListIds = async (listIds) => {
+    const sql = `
+    SELECT skill.*
+    FROM portfoliomatic.skill
+    WHERE skill.id IN(${listIds});`
+
+    try {
+        const [results] = await dbConnection.execute(sql);
+        return results;
+    } catch (error) {
+        return error;
+    }
+};
+
 const createOneSkill = async (data) => {
     const sql = `
     INSERT INTO portfoliomatic.skill
     VALUES
-        (NULL, :name, cv_id );
+        (NULL, :name, :cv_id );
         `;
 
     try {
@@ -29,4 +43,4 @@ const createOneSkill = async (data) => {
     }
 };
 
-export { getSkill, createOneSkill };
+export { getSkill, createOneSkill, getSkillByListIds };

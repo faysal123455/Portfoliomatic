@@ -1,19 +1,20 @@
 import { useParams } from "react-router-dom";
 import Footer from "../../components/footer/Footer";
-
-// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-// import { faRightFromBracket } from "@fortawesome/free-solid-svg-icons";
-
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faAt, faPhone, faRightFromBracket, faLongArrowAltRight, faEnvelopeOpen } from "@fortawesome/free-solid-svg-icons";
 
 import "./ExperiencesPage.css";
 import { useEffect, useState } from "react";
-import { getInfoOfCvId } from "../../services/api";
+import { getCitys, getInfoOfCvId } from "../../services/api";
+import { faLinkedin } from "@fortawesome/free-brands-svg-icons";
+import { getMonthAndYearFromDate } from '../../services/date';
+
 
 const ExperiencesPage = () => {
-
     const { createdCvId } = useParams();
     console.log(createdCvId)
     const [cv, setCv] = useState({})
+  
 
     useEffect(() => {
         getInfoOfCvId(createdCvId)
@@ -30,192 +31,135 @@ const ExperiencesPage = () => {
             });
     }, [createdCvId]);
 
+    
+
     return (
         <>
             <section className="real-cv">
                 <div className="cv-container">
 
                     <div className="left-column">
-                        <img
+                        {/* <img
                             className="portait"
                             src="https://www.codeur.com/tuto/wp-content/uploads/2022/01/MG_0110-4-293x300.jpg"
+                        /> */}
+                        <img
+                            className="portait"
+                        
+                            src={ `https://localhost:3000/img/${cv.image}` }
                         />
                         <div className="section">
                             <ul className="infos">
-                                <h2>contact</h2>
+                                <h2>Contact</h2>
                                 <li>
-                                    <i className="icon fas fa-at text-blue" />{" "}
-                                    <a href="mailto:contact@pgomba.com">contact@pgomba.com</a>
+                                    <FontAwesomeIcon icon={faPhone} className="text-blue" /> {cv.Telephone}
                                 </li>
                                 <li>
-                                    <i className="icon fas fa-phone text-blue" /> 04 75 53 80 50
-                                </li>
-                                <li>
-                                    <i className="icon fas fa-phone text-blue" /> contact@pgomba.com
-                                </li>
-                                {/* 
-                                <li>
-                                    <i className="icon faRightFromBracket " /> hello
-                                </li> */}
+                                    <FontAwesomeIcon icon={faEnvelopeOpen} className="text-blue" />
+                                    <a href={`mailto:${cv.social_media1}`}> {cv.social_media1}</a>
 
+
+                                </li>
+                                <li>
+                                    <FontAwesomeIcon icon={faLinkedin} className="text-blue" /> {cv.social_media2}
+                                </li>
                             </ul>
                         </div>
-                        {
-                            <div className="section">
-                                <h2>Skills</h2>
-                                <ul className="skills">
-                                    {/* {cv.map((skill, skillIndex) => (
-
-                                        <li key={skillIndex}>{skill.skillName}</li>
-                                    ))} */}
-                                </ul>
-                            </div>}
-
-
+                        <div className="section">
+                            <h2>Skills</h2>
+                            <ul className="skills">
+                                {cv.skills && cv.skills.map((skill, skillIndex) => (<li key={skillIndex}>{skill.name}</li>))}
+                            </ul>
+                        </div>
 
                         <div className="section">
                             <h2>Languages</h2>
-
                             <div className="flex">
-                                
-                                {JSON.stringify(cv.languages)}
-                                
-                                {/* {cv.languages.map((language, langIndex) => <p key={langIndex}>{language.name}</p>)} */}
-
-                                {/* {cv.languages.map((language, langIndex) => (
-                                    <p key={langIndex}>{language.languageName} - {language.languageLevel}</p>
-                                ))} */}
-                                {/* {cv.map((language, langIndex) => (
-                        <p key={langIndex}>{language.languageLevel}</p>
-                    ))} */}
+                                {cv.languages && cv.languages.map((language, langIndex) => <p key={langIndex}>{language.name} - {language.level}</p>)}
                             </div>
                         </div>
                     </div>
 
-
                     <div className="right-column">
-
-
                         <div className="header">
                             <div className="wave">
                                 <h1 className="nom">{cv.prenom} {cv.nom}</h1>
                                 <p>Freelance Front-end Developer</p>
-
                                 <h6 className="summary">
-                                    <p>
-                                        {cv.goal}
-                                    </p>
-                                    {/* {cv.map((summary, sumIndex) => (
-                                        <p key={sumIndex}>{summary.summaryName} 
-
-                                        </p>
-                                    ))} */}
-                                    {/* Le <strong>Front-end</strong> est une de mes passions : j’aime
-                                    intégrer ou imaginer des interfaces modernes, les rendre
-                                    responsive et les dynamiser avec des animations élégantes. Mes
-                                    deux technos de coeur sont <strong>Angular</strong> et{" "}
-                                    <strong>Bootstrap</strong>, que j’utilise depuis plus de 6 ans.
-                                    Je suis aussi Fullstack : PHP, MySQL, Doctrine… */}
+                                    <p>{cv.goal}</p>
                                 </h6>
                             </div>
                         </div>
 
-
-
-
                         <div className="content">
                             <div className="section">
-                                <h2>
-                                    <span className="text-blue">work</span>
-                                </h2>
-                                <p>
-                                    <strong>
-                                        2015 <i className="fas fa-long-arrow-alt-right" /> 2021
-                                    </strong>
-                                    <br />
-                                    Fullstack Developer à temps plein chez <em>Webadev SPRL</em>
-                                </p>
-                                <ul className="experience-list">
-                                    <li>
-                                        Réalisations de sites web, d’e-shops, d’interfaces et
-                                        d’applications web sous Angular et Bootstrap
-                                    </li>
-                                    <li>
-                                        Intégration de templates Photoshop, Illustrator, Sketch,
-                                        Figma
-                                    </li>
-                                    <li>Projets sous npm et Webpack</li>
-                                    <li>
-                                        Collaboration avec d’autres studios graphique (Studio Debie,
-                                        SOL,…)
-                                    </li>
-                                    <li>Optimisation des performances</li>
-                                    <li>
-                                        Développement de templates et de modules réutilisables
-                                    </li>
-                                    <li>
-                                        Projets en équipe, utilisation quotidienne de SVN, Git et
-                                        Github
-                                    </li>
-                                </ul>
-                            </div>
-                            <div className="section">
-                                <p>
-                                    <strong>2021</strong>
-                                    <br />
-                                    Freelance en activité
-                                </p>
-                                <ul className="experience-list">
-                                    <li>Freelance Front-end Developer</li>
-                                    <li>Unity Developer / Sound Designer</li>
-                                </ul>
-                            </div>
-                            <div className="section">
-                                <h2>
-                                    <span className="text-blue">&amp; Education</span>
-                                </h2>
-                                <p>
-                                    <strong>
-                                        2015 <i className="fas fa-long-arrow-alt-right" /> 2019
-                                    </strong>
-                                    <br />
-                                    <em>Bachelier en Informatique de Gestion</em>, Diplômé,
-                                    Institut Saint Laurent
-                                </p>
-                                <p>
-                                    <strong>2015</strong>
-                                    <br />
-                                    <em>STE-Formations Informatiques</em>, Formation qualifiante
-                                    de Web Developer
-                                </p>
-                                <p>
-                                    <strong>
-                                        2013 <i className="fas fa-long-arrow-alt-right" /> 2014
-                                    </strong>
-                                    <br />
-                                    <em>Bachelier en Sciences humaines</em>, Haute École de Liège
-                                </p>
+                                <h2><span className="text-blue">Works</span></h2>
+                                {
+                                    cv.works && cv.works.map((work, workIndex) => <article key={workIndex}>
+                                        <p>
+                                            <strong>
+                                                {getMonthAndYearFromDate(work.date_start)}
+
+                                                <FontAwesomeIcon icon= {faLongArrowAltRight} />  {getMonthAndYearFromDate(work.date_end)}
+                                            </strong>
+                                            <br />
+                                            {work.job_title} -<em> {work.company_name}</em> -<em> {work.city} </em> -<em> {work.country} </em>
+                                        </p>
+                                        <ul className="experience-list">
+                                            <li>Réalisations de sites web, d’e-shops, d’interfaces et d’applications web</li>
+                                        
+                                        </ul>
+                                    </article>)
+                                }
+
+
                             </div>
 
                             <div className="section">
-                                <h2>
-                                    <span className="text-blue">archivments</span>
-                                </h2>
-                                <p>
+                                <h2><span className="text-blue">Educations</span></h2>
+                                {cv.educations && cv.educations.map((education, educationIndex) => <article key={educationIndex}>
+                                    <p>
+                                        <strong>
+                                            {getMonthAndYearFromDate(education.date_start)}
+
+                                            <FontAwesomeIcon icon={faLongArrowAltRight} />
+                                            {getMonthAndYearFromDate(education.date_end)}
+                                        </strong>
+                                        <br />
+                                        {education.name} -<em> {education.city} </em> -<em> {education.country} </em> - <em> {education.details}</em>
+
+                                
+
+                                    </p>
+                                    <ul>
+                                        <li>Réalisations de sites web, d’e-shops, d’interfaces et d’applications web</li>
+
+</ul>
+
+                                </article>)
+                                }
+
+
+                            </div>
+                            <div className="section">
+                                <h2><span className="text-blue">Achievements</span></h2>
+                                {/* <p>
                                     Permis B, possession d’une voiture
                                     <br />
                                     Animateur Scout pendant 6 ans
                                     <br />
                                     Brevet d’animateur de Centre de Vacances
-                                </p>
-                            </div>
+                                </p> */}
 
+                                {cv.archivments && cv.archivments.map((archivment, archivmentIndex) => (
+                                    <li key={archivmentIndex}>{archivment.name} - {archivment.recognitation}</li> 
+                                ))}
+
+                            </div>
                         </div>
                     </div>
                 </div>
-
             </section>
-
             <Footer />
         </>
     );

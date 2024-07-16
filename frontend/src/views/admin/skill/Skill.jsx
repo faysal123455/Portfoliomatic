@@ -1,14 +1,14 @@
 import "./Skill.css"
-import { json, useParams } from "react-router-dom"
-import { createSkill } from '../../../services/api';
-import { useState } from 'react';
+// import { json, useParams } from "react-router-dom"
+// import { createSkill } from '../../../services/api';
+// import { useState } from 'react';
 
 
 const Skill = () => {
 
-    const { createdCvId } = useParams();
-    console.log(cvIdAsString)
-    const cvIdAsString = String(createdCvId);
+    // const { createdCvId } = useParams();
+    // console.log(cvIdAsString)
+    // const cvIdAsString = String(createdCvId);
 
 
 
