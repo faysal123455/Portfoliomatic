@@ -1,3 +1,6 @@
+import dbConnection from '../service/dbconnection.js';
+
+
 import { getArchivment, createOneArchivment } from "../repositories/archivmentRepo.js";
 
 const archivments = (req, res) => {

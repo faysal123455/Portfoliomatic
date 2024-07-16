@@ -71,4 +71,5 @@ const educationDelete = async (req, res) => {
 };
 
 
+
 export { educations, createEducation, educationById, update, educationDelete }
